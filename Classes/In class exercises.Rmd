@@ -1,0 +1,12 @@
+---
+title: "Class 1 Exercises"
+output: html_notebook
+---
+##My first exercise
+
+```{r}
+classFirstVar <- "Rad"
+
+classFirstVar
+```
+
