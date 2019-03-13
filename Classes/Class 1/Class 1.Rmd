@@ -21,8 +21,6 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 1. Assign a value to a variable.
 ```{r}
 myFirstVar <- "Hello World!"
-
-myFirstVar <- 
 ```
 
 2. Reassign a new value to the same variable.
