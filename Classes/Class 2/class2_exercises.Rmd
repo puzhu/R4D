@@ -23,8 +23,14 @@ output:
 8. Explain in a couple of short sentences why `c("one", 1)` yields the atomic vector `["one", "1"]`.
 
 ##Arrange a table
-1. Install and load the `nycflights13` package (and the `tidyverse` package if you did not complete that to-do)
-2. Arrange the flights data in descending order of dates (the last day of the year should be the first row of the data). You just have to print this, no need to save it to a new variable. Use the tidyverse portal and/or google to find the answer (if you don't know it already).
+1. Install and load the `nycflights13` package and the `tidyverse` package if you did not complete that to-do.
+2. Arrange the flights data from the NY in descending order of dates (the last day of the year should be the first row of the data). You just have to print this, no need to save it to a new variable. Use the tidyverse portal and/or google to find the answer (if you don't know it already).
+```{r}
+library(tidyverse); library(tidyverse)
+
+flights %>% 
+    arrange(desc(month), desc(day))
+```
 
 ##Select columns
 1. Use the documentation for `select()` on the tidyverse portal to find a way to create a new tibble that contains the first three columns (year, month, day) and all other columns whose names `contains()` the term "delay"

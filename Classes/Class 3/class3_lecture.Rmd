@@ -1,0 +1,54 @@
+---
+title: "Class 3 - Lecture"
+author: Hari Subhash
+date: "Date created: `r Sys.Date()`"
+output:
+  html_notebook:
+    highlight: kate
+    smart: yes
+    theme: cosmo
+    code_folding: show
+    df_print: paged
+    toc: true
+    toc_depth: 2
+    toc_float: true
+css: /Users/hsubhash/Documents/R4D/Assets/custom.css
+---
+
+##Learning Objectives
+1. Host your notebook online using github
+2. Filter rows from tabular data
+3. Mutate tabular data
+4. Master grouping
+5. Introduce ggplot2 for data visualizations
+
+##Filter rows (recap)
+1. Filter out the flights that belong to the following carriers: UA, AA and DL
+2. Use %in% to filter out the flights that belong to the following carriers: UA, AA and DL
+3. Filter out the flight that suffered the highest departure delay in 2013.
+4. Filter out the 50th most delayed flight that flew out from JFK in 2013 (using top_n() or arrange() + slice() and dense_rank())
+5. Filter departure delays that are between one to two hours (show with and without helper)
+
+##Mutate
+1. Use the lubridate package to create a new date variable and arrange it in descending order.
+2. Use `if_else()` syntax to create a variable that indicates whether a flight was delayed.
+
+##Grouping
+1. Summarise with and without grouping
+2. Counteracting data outliers in summary stats
+2. Group and mutate
+3. Group and filter
+
+##A ggplot taster
+1. Draw an exploratory chart
+2. Explain the underlying concepts: data, aethetics, geoms and scales
+
+
+```{r}
+source("../helpers.R")
+
+pickRandom()
+```
+
+
+
