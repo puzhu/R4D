@@ -9,9 +9,6 @@ output:
     theme: cosmo
     code_folding: show
     df_print: paged
-    toc: true
-    toc_depth: 2
-    toc_float: true
 css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 ---
 ##Packages Used
@@ -20,13 +17,13 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 3. lubridate a tidyverse package to handle dates in R
 
 ##Learning Objectives
-1. ~Use slack to ask questions more effectively~
-2. ~Understand material from class 1~
-3. ~Install and load packages~
-4. ~Use the tidyverse portal to access information~
-5. ~Explain the use of pipes and the dot symbol~
-6. ~Arrange/sort a table~
-7. ~Select columns from tabular data~
+1. ~~Use slack to ask questions more effectively~~
+2. ~~Understand material from class 1~~
+3. ~~Install and load packages~~
+4. ~~Use the tidyverse portal to access information~~
+5. ~~Explain the use of pipes and the dot symbol~~
+6. ~~Arrange/sort a table~~
+7. ~~Select columns from tabular data~~
 
 
 

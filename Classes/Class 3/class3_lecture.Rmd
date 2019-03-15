@@ -9,17 +9,14 @@ output:
     theme: cosmo
     code_folding: show
     df_print: paged
-    toc: true
-    toc_depth: 2
-    toc_float: true
 css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 ---
 
 ##Learning Objectives
-1. ~Host your notebook online using github~
-2. Filter rows from tabular data
-3. Mutate tabular data
-4. Master grouping
+1. ~~Host your notebook online using github~~
+2. ~~Filter rows from tabular data~~
+3. ~~Mutate tabular data~~
+4. ~~Master grouping~~
 5. Introduce ggplot2 for data visualizations
 
 ```{r, message=FALSE, warning=FALSE}
@@ -122,17 +119,19 @@ flights %>%
 
 1. Use the lubridate package to create a new date variable and arrange it in descending order.
 
-Paste function
+Introducing the paste function. It can paste together individual arguments like below,
 ```{r}
-
-messageToCollapse <- c("R4D", "class", "is awesome")
-
 paste("R4D", "class", "is awesome", sep = "-")
-
-paste(messageToCollapse, collapse = "-")
 ```
 
+or paste together elements in a vector. Notice that I have used `sep` as an argument in the first instance and `collapse` in the second.
+```{r}
+messageToCollapse <- c("R4D", "class", "is awesome")
+paste(messageToCollapse, collapse = "-")
 
+```
+
+Now lets create new date variable using the `ymd()` function in the lubridate package.
 ```{r}
 library(lubridate)
 
