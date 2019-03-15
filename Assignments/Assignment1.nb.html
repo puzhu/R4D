@@ -27,6 +27,83 @@
 <script src="data:application/x-javascript;base64,CndpbmRvdy5pbml0aWFsaXplU291cmNlRW1iZWQgPSBmdW5jdGlvbihmaWxlbmFtZSkgewogICQoIiNybWQtZG93bmxvYWQtc291cmNlIikuY2xpY2soZnVuY3Rpb24oKSB7CiAgICB2YXIgc3JjID0gJCgiI3JtZC1zb3VyY2UtY29kZSIpLmh0bWwoKTsKICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpOwogICAgYS5ocmVmID0gImRhdGE6dGV4dC94LXItbWFya2Rvd247YmFzZTY0LCIgKyBzcmM7CiAgICBhLmRvd25sb2FkID0gZmlsZW5hbWU7CiAgICBkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpOwogICAgYS5jbGljaygpOwogICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChhKTsKICB9KTsKfTsK"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #1f1c1b; background-color: #ffffff; }
+code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code > span.dt { color: #0057ae; } /* DataType */
+code > span.dv { color: #b08000; } /* DecVal */
+code > span.bn { color: #b08000; } /* BaseN */
+code > span.fl { color: #b08000; } /* Float */
+code > span.cn { color: #aa5500; } /* Constant */
+code > span.ch { color: #924c9d; } /* Char */
+code > span.sc { color: #3daee9; } /* SpecialChar */
+code > span.st { color: #bf0303; } /* String */
+code > span.vs { color: #bf0303; } /* VerbatimString */
+code > span.ss { color: #ff5500; } /* SpecialString */
+code > span.im { color: #ff5500; } /* Import */
+code > span.co { color: #898887; } /* Comment */
+code > span.do { color: #607880; } /* Documentation */
+code > span.an { color: #ca60ca; } /* Annotation */
+code > span.cv { color: #0095ff; } /* CommentVar */
+code > span.ot { color: #006e28; } /* Other */
+code > span.fu { color: #644a9b; } /* Function */
+code > span.va { color: #0057ae; } /* Variable */
+code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #1f1c1b; } /* Operator */
+code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code > span.pp { color: #006e28; } /* Preprocessor */
+code > span.at { color: #0057ae; } /* Attribute */
+code > span.re { color: #0057ae; } /* RegionMarker */
+code > span.in { color: #b08000; } /* Information */
+code > span.wa { color: #bf0303; } /* Warning */
+code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
+code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code > span. { color: #1f1c1b; } /* Normal */
+
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -59,6 +136,7 @@ h6 {
 }
 </style>
 
+<link href="data:text/css;charset=utf-8,body%20%7B%0A%0Aline%2Dheight%3A%201%2E7em%3B%0A%7D%0Ah1%2C%0Ah2%2C%0Ah3%2C%0Ah4%2C%0Ah5%2C%0Ah6%20%7B%0Afont%2Dfamily%3A%20%22PT%20Sans%20Narrow%22%2C%20sans%2Dserif%3B%0A%7D%0Acode%2C%0Apre%20%7B%0Afont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%22Courier%20New%22%2C%20monospace%3B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -219,30 +297,245 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Assignment 1</h1>
 <h4 class="author"><em>Hari Subhash</em></h4>
-<h4 class="date"><em>Date created: 2019-03-14</em></h4>
+<h4 class="date"><em>Date created: 2019-03-15</em></h4>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<p><strong>Due Date</strong>: Wednesday, March 20th</p>
+<p><strong>Due Date</strong>: Sunday, March 24th</p>
+<p><strong>Keyboard Shortcuts</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>Assignment operator (&lt;-) is <code>Alt+-</code> for Windows and <code>Option+-</code> for Mac</li>
+<li>Insert new code chunk <code>Ctrl+Alt+I</code> for Windows and <code>Command+Option+I</code> for Mac</li>
+<li>Run a line of code <code>Ctrl+Enter</code> for Windows and <code>Command+Enter</code> for Mac</li>
+<li>Run all the code within a chunk <code>Ctrl+Shift+Enter</code> for Windows and <code>Command+Shift+Enter</code> for Mac</li>
+<li>Insert a pipe operator (%&gt;%) <code>Ctrl+Shift+M</code> for Windows and <code>Command+Shift+M</code> for Mac</li>
+</ol>
+<p><strong>General Instructions</strong></p>
+<ol style="list-style-type: decimal">
+<li>Use the cheatsheets and the keyboard shortcuts as you work through the assignment.</li>
+<li>Each task should be answered right below the question.</li>
+<li>The assignment should be submitted via a shareable github link on the assignments channel in Slack.</li>
+<li>Make sure the notebook is neatly formatted and looks good when you preview it.</li>
+</ol>
 <div id="task-set-1-data-types-and-structures" class="section level2">
 <h2>Task set 1: Data types and structures</h2>
 <ol style="list-style-type: decimal">
-<li>List the 4 most common types of atomic vectors.</li>
+<li>List the 4 most common (data) types of atomic vectors.
+<ul>
+<li>Answer:</li>
+</ul></li>
 <li>Create atomic vectors of the 4 common types covered in class. Print their length and type.</li>
-<li>Create a list that holds these 4 common types of vectors</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="3" style="list-style-type: decimal">
+<li>List the heirarchy of data types for coercion
+<ul>
+<li>Answer:</li>
+</ul></li>
+<li>Explain why the output of following bits of code is TRUE (explain what is happening in terms of coercion):</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXCIxXCIgPT0gMVxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;1&quot;</span> <span class="op">==</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Answer:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuRkFMU0UgPT0gMFxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="ot">FALSE</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span></code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Answer:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Create a list that holds the 4 common types of atomic vectors you created in task 2.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="4" style="list-style-type: decimal">
 <li>Create a data frame with 3 columns and 5 rows using the <code>data.frame()</code> function</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="5" style="list-style-type: decimal">
 <li>Create the same data frame as above using <code>tibble()</code> function</li>
-<li>Use the <code>str()</code>, <code>class()</code> and or ’glimpse()` command to see the difference between the dataframe and tibble create in 4 and 5.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="6" style="list-style-type: decimal">
+<li>Use the <code>str()</code>, <code>class()</code> and or <code>glimpse()</code> command to see the difference between the dataframe and tibble create in 4 and 5.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="7" style="list-style-type: decimal">
+<li><p>Fill in the blanks.</p>
+<ul>
+<li>A data frame is a ____ dimensionsional data structure in R that consists of ____ of ____ length</li>
+</ul></li>
+<li>What is the difference between an atomic vector and a list?
+<ul>
+<li>Answer:</li>
+</ul></li>
 </ol>
 </div>
 <div id="task-set-2-data-manipulation-using-dplyr" class="section level2">
 <h2>Task set 2: Data manipulation using dplyr</h2>
+<p><strong>INSTRUCTIONS</strong>: You will be using the tidyverse and nycflights13 packages for the next set of tasks. Refer to the documentation on tidyverse.org or use the help pages if you do not understand a function fully.</p>
+<ol style="list-style-type: decimal">
+<li>Load the tidyverse and nycflights13 packages.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="2" style="list-style-type: decimal">
+<li><p>Describe two ways in which you can use RStudio confirm that a package has been loaded into your current R session? (Hint: One of them is a dropdown menu and the other a list of checkboxes)</p>
+<ul>
+<li>Answer:</li>
+</ul></li>
+<li><p>Use the <code>distinct()</code> command to identify the unique combinations of airline carriers and origin airports in the flights data.</p></li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="4" style="list-style-type: decimal">
+<li>Use the <code>one_of()</code> helper function to select the following columns - year, month, day, dep_time, sched_dep_time, dep_delay, arr_time, from the flights data.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="5" style="list-style-type: decimal">
+<li>Use the <code>slice()</code> function to slice the first 10 rows in the flights data.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="6" style="list-style-type: decimal">
+<li>Perform the same operation as the previous task but this time use <code>filter()</code>. (Hint: Search for how to get the row numbers of a tibble)</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="7" style="list-style-type: decimal">
+<li>Use the <code>top_n()</code> command to identify the top 5 flights out of NYC that experienced the greatest arrival delays in 2013.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="8" style="list-style-type: decimal">
+<li>Use <code>top_n()</code> along with <code>arrange()</code> and <code>slice()</code> to pull out the 50th most delayed departure from NYC in 2013 (Not all 50, just the 50th).</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="9" style="list-style-type: decimal">
+<li>Do the same thing as the previous task using
+<ul>
+<li><code>row_number()</code></li>
+<li>and <code>dense_rank()</code></li>
+</ul></li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="10" style="list-style-type: decimal">
+<li><p>The result from <code>row_number()</code> and <code>top_n()</code> are the same, while that from <code>dense_rank()</code> is different. Why?</p>
+<ul>
+<li>Answer:</li>
+</ul></li>
+<li><p>Find the top 10 airline carrier that had the highest average departure delays in 2013 using <code>group_by()</code>, <code>summarise()</code> and other functions you have learnt previously.</p></li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="12" style="list-style-type: decimal">
+<li>Use <code>group_by()</code> with <code>mutate()</code> to create a new variable called <code>comparativeDelay</code> which is the difference between departure delay and the average delay in each origin airport for every hour in 2013 (checkout the <code>time_hour</code> variable in the flights data). Store the result in a variable called <code>comparativeDelays</code>.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="13" style="list-style-type: decimal">
+<li>Now group the <code>comparativeDelays</code> tibble by carriers to print the top 10 airlines with the greatest average comparative delays.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="14" style="list-style-type: decimal">
+<li>Use <code>group_by()</code> with filter to print the 5 most delayed flights from each origin. Your printed tibble should have 15 rows.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="15" style="list-style-type: decimal">
+<li><p>The air authority in NY wants to penalize carriers for departure delays. Which of the three metrics (task 1, 3 or 4) would you recommend they use to identify the airlines to penalize. Why?</p>
+<ul>
+<li>Answer:</li>
+</ul></li>
+</ol>
+</div>
+<div id="task-set-3-r-markdown" class="section level2">
+<h2>Task set 3: R markdown</h2>
+<ol style="list-style-type: decimal">
+<li>Modify the text below as per the prompt
+<ul>
+<li>Underline me</li>
+<li>Make me bold</li>
+<li>Make me a block quote</li>
+<li>Make me italic</li>
+<li>Strike through me</li>
+</ul></li>
+<li><p>Create a level three header called “My level 3 header” under this line</p></li>
+<li><p>Modify the content below so that the bullet points (unordered list) render correctly</p></li>
+</ol>
+<p><strong>Messy bullet points</strong> * one * two * three</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Use chunk options to hide the output and the code from the chunk below in the previewed notebook.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQXNzaWdubWVudCAxIgphdXRob3I6IEhhcmkgU3ViaGFzaApkYXRlOiAiRGF0ZSBjcmVhdGVkOiBgciBTeXMuRGF0ZSgpYCIKb3V0cHV0OgogIGh0bWxfbm90ZWJvb2s6CiAgICBoaWdobGlnaHQ6IGthdGUKICAgIHNtYXJ0OiB5ZXMKICAgIHRoZW1lOiBjb3NtbwogICAgY29kZV9mb2xkaW5nOiBzaG93CiAgICBkZl9wcmludDogcGFnZWQKLS0tCgoqKkR1ZSBEYXRlKio6IFdlZG5lc2RheSwgTWFyY2ggMjB0aAoKIyNUYXNrIHNldCAxOiBEYXRhIHR5cGVzIGFuZCBzdHJ1Y3R1cmVzCjEuIExpc3QgdGhlIDQgbW9zdCBjb21tb24gdHlwZXMgb2YgYXRvbWljIHZlY3RvcnMuCjIuIENyZWF0ZSBhdG9taWMgdmVjdG9ycyBvZiB0aGUgNCBjb21tb24gdHlwZXMgY292ZXJlZCBpbiBjbGFzcy4gUHJpbnQgdGhlaXIgbGVuZ3RoIGFuZCB0eXBlLgozLiBDcmVhdGUgYSBsaXN0IHRoYXQgaG9sZHMgdGhlc2UgNCBjb21tb24gdHlwZXMgb2YgdmVjdG9ycwo0LiBDcmVhdGUgYSBkYXRhIGZyYW1lIHdpdGggMyBjb2x1bW5zIGFuZCA1IHJvd3MgdXNpbmcgdGhlIGBkYXRhLmZyYW1lKClgIGZ1bmN0aW9uCjUuIENyZWF0ZSB0aGUgc2FtZSBkYXRhIGZyYW1lIGFzIGFib3ZlIHVzaW5nIGB0aWJibGUoKWAgZnVuY3Rpb24KNi4gVXNlIHRoZSBgc3RyKClgLCBgY2xhc3MoKWAgYW5kIG9yICdnbGltcHNlKClgIGNvbW1hbmQgdG8gc2VlIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gdGhlIGRhdGFmcmFtZSBhbmQgdGliYmxlIGNyZWF0ZSBpbiA0IGFuZCA1LgoKCiMjVGFzayBzZXQgMjogRGF0YSBtYW5pcHVsYXRpb24gdXNpbmcgZHBseXIK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQXNzaWdubWVudCAxIgphdXRob3I6IEhhcmkgU3ViaGFzaApkYXRlOiAiRGF0ZSBjcmVhdGVkOiBgciBTeXMuRGF0ZSgpYCIKb3V0cHV0OgogIGh0bWxfbm90ZWJvb2s6CiAgICBoaWdobGlnaHQ6IGthdGUKICAgIHNtYXJ0OiB5ZXMKICAgIHRoZW1lOiBjb3NtbwogICAgY29kZV9mb2xkaW5nOiBzaG93CiAgICBkZl9wcmludDogcGFnZWQKY3NzOiAvVXNlcnMvaHN1Ymhhc2gvRG9jdW1lbnRzL1I0RC9Bc3NldHMvY3VzdG9tLmNzcwotLS0KCioqRHVlIERhdGUqKjogU3VuZGF5LCBNYXJjaCAyNHRoCgoqKktleWJvYXJkIFNob3J0Y3V0cyoqOgoKMS4gQXNzaWdubWVudCBvcGVyYXRvciAoPC0pIGlzIGBBbHQrLWAgZm9yIFdpbmRvd3MgYW5kIGBPcHRpb24rLWAgZm9yIE1hYwoyLiBJbnNlcnQgbmV3IGNvZGUgY2h1bmsgYEN0cmwrQWx0K0lgIGZvciBXaW5kb3dzIGFuZCBgQ29tbWFuZCtPcHRpb24rSWAgZm9yIE1hYwozLiBSdW4gYSBsaW5lIG9mIGNvZGUgYEN0cmwrRW50ZXJgIGZvciBXaW5kb3dzIGFuZCBgQ29tbWFuZCtFbnRlcmAgZm9yIE1hYwo0LiBSdW4gYWxsIHRoZSBjb2RlIHdpdGhpbiBhIGNodW5rIGBDdHJsK1NoaWZ0K0VudGVyYCBmb3IgV2luZG93cyBhbmQgYENvbW1hbmQrU2hpZnQrRW50ZXJgIGZvciBNYWMKNS4gSW5zZXJ0IGEgcGlwZSBvcGVyYXRvciAoJT4lKSBgQ3RybCtTaGlmdCtNYCBmb3IgV2luZG93cyBhbmQgYENvbW1hbmQrU2hpZnQrTWAgZm9yIE1hYwoKKipHZW5lcmFsIEluc3RydWN0aW9ucyoqCgoxLiBVc2UgdGhlIGNoZWF0c2hlZXRzIGFuZCB0aGUga2V5Ym9hcmQgc2hvcnRjdXRzIGFzIHlvdSB3b3JrIHRocm91Z2ggdGhlIGFzc2lnbm1lbnQuCjIuIEVhY2ggdGFzayBzaG91bGQgYmUgYW5zd2VyZWQgcmlnaHQgYmVsb3cgdGhlIHF1ZXN0aW9uLgozLiBUaGUgYXNzaWdubWVudCBzaG91bGQgYmUgc3VibWl0dGVkIHZpYSBhIHNoYXJlYWJsZSBnaXRodWIgbGluayBvbiB0aGUgYXNzaWdubWVudHMgY2hhbm5lbCBpbiBTbGFjay4KNC4gTWFrZSBzdXJlIHRoZSBub3RlYm9vayBpcyBuZWF0bHkgZm9ybWF0dGVkIGFuZCBsb29rcyBnb29kIHdoZW4geW91IHByZXZpZXcgaXQuCgojI1Rhc2sgc2V0IDE6IERhdGEgdHlwZXMgYW5kIHN0cnVjdHVyZXMKMS4gTGlzdCB0aGUgNCBtb3N0IGNvbW1vbiAoZGF0YSkgdHlwZXMgb2YgYXRvbWljIHZlY3RvcnMuCiAgICArIEFuc3dlcjoKCjIuIENyZWF0ZSBhdG9taWMgdmVjdG9ycyBvZiB0aGUgNCBjb21tb24gdHlwZXMgY292ZXJlZCBpbiBjbGFzcy4gUHJpbnQgdGhlaXIgbGVuZ3RoIGFuZCB0eXBlLgoKYGBge3J9CgpgYGAKCjMuIExpc3QgdGhlIGhlaXJhcmNoeSBvZiBkYXRhIHR5cGVzIGZvciBjb2VyY2lvbgogICAgKyBBbnN3ZXI6Cgo0LiBFeHBsYWluIHdoeSB0aGUgb3V0cHV0IG9mIGZvbGxvd2luZyBiaXRzIG9mIGNvZGUgaXMgVFJVRSAoZXhwbGFpbiB3aGF0IGlzIGhhcHBlbmluZyBpbiB0ZXJtcyBvZiBjb2VyY2lvbik6IAoKYGBge3J9CiIxIiA9PSAxCmBgYApBbnN3ZXI6CgpgYGB7cn0KRkFMU0UgPT0gMApgYGAKQW5zd2VyOgoKMy4gQ3JlYXRlIGEgbGlzdCB0aGF0IGhvbGRzIHRoZSA0IGNvbW1vbiB0eXBlcyBvZiBhdG9taWMgdmVjdG9ycyB5b3UgY3JlYXRlZCBpbiB0YXNrIDIuCgpgYGB7cn0KCmBgYAo0LiBDcmVhdGUgYSBkYXRhIGZyYW1lIHdpdGggMyBjb2x1bW5zIGFuZCA1IHJvd3MgdXNpbmcgdGhlIGBkYXRhLmZyYW1lKClgIGZ1bmN0aW9uCgpgYGB7cn0KCmBgYAo1LiBDcmVhdGUgdGhlIHNhbWUgZGF0YSBmcmFtZSBhcyBhYm92ZSB1c2luZyBgdGliYmxlKClgIGZ1bmN0aW9uCgpgYGB7cn0KCmBgYAoKNi4gVXNlIHRoZSBgc3RyKClgLCBgY2xhc3MoKWAgYW5kIG9yIGBnbGltcHNlKClgIGNvbW1hbmQgdG8gc2VlIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gdGhlIGRhdGFmcmFtZSBhbmQgdGliYmxlIGNyZWF0ZSBpbiA0IGFuZCA1LgoKYGBge3J9CgpgYGAKCjcuIEZpbGwgaW4gdGhlIGJsYW5rcy4gCgogICAgKyBBIGRhdGEgZnJhbWUgaXMgYSBfX19fIGRpbWVuc2lvbnNpb25hbCBkYXRhIHN0cnVjdHVyZSBpbiBSIHRoYXQgY29uc2lzdHMgb2YgX19fXyBvZiBfX19fIGxlbmd0aAoKOC4gV2hhdCBpcyB0aGUgZGlmZmVyZW5jZSBiZXR3ZWVuIGFuIGF0b21pYyB2ZWN0b3IgYW5kIGEgbGlzdD8KICAgICsgQW5zd2VyOiAKCgojI1Rhc2sgc2V0IDI6IERhdGEgbWFuaXB1bGF0aW9uIHVzaW5nIGRwbHlyCgoqKklOU1RSVUNUSU9OUyoqOiBZb3Ugd2lsbCBiZSB1c2luZyB0aGUgdGlkeXZlcnNlIGFuZCBueWNmbGlnaHRzMTMgcGFja2FnZXMgZm9yIHRoZSBuZXh0IHNldCBvZiB0YXNrcy4gUmVmZXIgdG8gdGhlIGRvY3VtZW50YXRpb24gb24gdGlkeXZlcnNlLm9yZyBvciB1c2UgdGhlIGhlbHAgcGFnZXMgaWYgeW91IGRvIG5vdCB1bmRlcnN0YW5kIGEgZnVuY3Rpb24gZnVsbHkuCgoxLiBMb2FkIHRoZSB0aWR5dmVyc2UgYW5kIG55Y2ZsaWdodHMxMyBwYWNrYWdlcy4KCmBgYHtyfQoKYGBgCgoyLiBEZXNjcmliZSB0d28gd2F5cyBpbiB3aGljaCB5b3UgY2FuIHVzZSBSU3R1ZGlvIGNvbmZpcm0gdGhhdCBhIHBhY2thZ2UgaGFzIGJlZW4gbG9hZGVkIGludG8geW91ciBjdXJyZW50IFIgc2Vzc2lvbj8gKEhpbnQ6IE9uZSBvZiB0aGVtIGlzIGEgZHJvcGRvd24gbWVudSBhbmQgdGhlIG90aGVyIGEgbGlzdCBvZiBjaGVja2JveGVzKQoKICAgICsgQW5zd2VyOgoKMy4gVXNlIHRoZSBgZGlzdGluY3QoKWAgY29tbWFuZCB0byBpZGVudGlmeSB0aGUgdW5pcXVlIGNvbWJpbmF0aW9ucyBvZiBhaXJsaW5lIGNhcnJpZXJzIGFuZCBvcmlnaW4gYWlycG9ydHMgaW4gdGhlIGZsaWdodHMgZGF0YS4KCmBgYHtyfQoKYGBgCgo0LiBVc2UgdGhlIGBvbmVfb2YoKWAgaGVscGVyIGZ1bmN0aW9uIHRvIHNlbGVjdCB0aGUgZm9sbG93aW5nIGNvbHVtbnMgLSAgeWVhciwgbW9udGgsIGRheSwgZGVwX3RpbWUsIHNjaGVkX2RlcF90aW1lLCBkZXBfZGVsYXksIGFycl90aW1lLCBmcm9tIHRoZSBmbGlnaHRzIGRhdGEuCgpgYGB7cn0KCmBgYAoKNS4gVXNlIHRoZSBgc2xpY2UoKWAgZnVuY3Rpb24gdG8gc2xpY2UgdGhlIGZpcnN0IDEwIHJvd3MgaW4gdGhlIGZsaWdodHMgZGF0YS4KCmBgYHtyfQoKYGBgCgo2LiBQZXJmb3JtIHRoZSBzYW1lIG9wZXJhdGlvbiBhcyB0aGUgcHJldmlvdXMgdGFzayBidXQgdGhpcyB0aW1lIHVzZSBgZmlsdGVyKClgLiAoSGludDogU2VhcmNoIGZvciBob3cgdG8gZ2V0IHRoZSByb3cgbnVtYmVycyBvZiBhIHRpYmJsZSkKCmBgYHtyfQoKYGBgCgo3LiBVc2UgdGhlIGB0b3BfbigpYCBjb21tYW5kIHRvIGlkZW50aWZ5IHRoZSB0b3AgNSBmbGlnaHRzIG91dCBvZiBOWUMgdGhhdCBleHBlcmllbmNlZCB0aGUgZ3JlYXRlc3QgYXJyaXZhbCBkZWxheXMgaW4gMjAxMy4KCmBgYHtyfQoKYGBgCgo4LiBVc2UgYHRvcF9uKClgIGFsb25nIHdpdGggYGFycmFuZ2UoKWAgYW5kIGBzbGljZSgpYCB0byBwdWxsIG91dCB0aGUgNTB0aCBtb3N0IGRlbGF5ZWQgZGVwYXJ0dXJlIGZyb20gTllDIGluIDIwMTMgKE5vdCBhbGwgNTAsIGp1c3QgdGhlIDUwdGgpLiAKYGBge3J9CgpgYGAKCjkuIERvIHRoZSBzYW1lIHRoaW5nIGFzIHRoZSBwcmV2aW91cyB0YXNrIHVzaW5nIAogICAgKyBgcm93X251bWJlcigpYAogICAgKyBhbmQgYGRlbnNlX3JhbmsoKWAKYGBge3J9CgpgYGAKCmBgYHtyfQoKYGBgCgoKMTAuIFRoZSByZXN1bHQgZnJvbSBgcm93X251bWJlcigpYCBhbmQgYHRvcF9uKClgIGFyZSB0aGUgc2FtZSwgd2hpbGUgdGhhdCBmcm9tIGBkZW5zZV9yYW5rKClgIGlzIGRpZmZlcmVudC4gV2h5PwoKICAgICsgQW5zd2VyOgoKMTEuIEZpbmQgdGhlIHRvcCAxMCBhaXJsaW5lIGNhcnJpZXIgdGhhdCBoYWQgdGhlIGhpZ2hlc3QgYXZlcmFnZSBkZXBhcnR1cmUgZGVsYXlzIGluIDIwMTMgdXNpbmcgYGdyb3VwX2J5KClgLCBgc3VtbWFyaXNlKClgIGFuZCBvdGhlciBmdW5jdGlvbnMgeW91IGhhdmUgbGVhcm50IHByZXZpb3VzbHkuCmBgYHtyfQoKYGBgCgoxMi4gVXNlIGBncm91cF9ieSgpYCB3aXRoIGBtdXRhdGUoKWAgdG8gY3JlYXRlIGEgbmV3IHZhcmlhYmxlIGNhbGxlZCBgY29tcGFyYXRpdmVEZWxheWAgd2hpY2ggaXMgdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBkZXBhcnR1cmUgZGVsYXkgYW5kIHRoZSBhdmVyYWdlIGRlbGF5IGluIGVhY2ggb3JpZ2luIGFpcnBvcnQgZm9yIGV2ZXJ5IGhvdXIgaW4gMjAxMyAoY2hlY2tvdXQgdGhlIGB0aW1lX2hvdXJgIHZhcmlhYmxlIGluIHRoZSBmbGlnaHRzIGRhdGEpLiBTdG9yZSB0aGUgcmVzdWx0IGluIGEgdmFyaWFibGUgY2FsbGVkIGBjb21wYXJhdGl2ZURlbGF5c2AuCmBgYHtyfQoKYGBgCgoxMy4gTm93IGdyb3VwIHRoZSBgY29tcGFyYXRpdmVEZWxheXNgIHRpYmJsZSBieSBjYXJyaWVycyB0byBwcmludCB0aGUgdG9wIDEwIGFpcmxpbmVzIHdpdGggdGhlIGdyZWF0ZXN0IGF2ZXJhZ2UgY29tcGFyYXRpdmUgZGVsYXlzLgpgYGB7cn0KCmBgYAoKMTQuIFVzZSBgZ3JvdXBfYnkoKWAgd2l0aCBmaWx0ZXIgdG8gcHJpbnQgdGhlIDUgbW9zdCBkZWxheWVkIGZsaWdodHMgZnJvbSBlYWNoIG9yaWdpbi4gWW91ciBwcmludGVkIHRpYmJsZSBzaG91bGQgaGF2ZSAxNSByb3dzLgpgYGB7cn0KCmBgYAoKMTUuIFRoZSBhaXIgYXV0aG9yaXR5IGluIE5ZIHdhbnRzIHRvIHBlbmFsaXplIGNhcnJpZXJzIGZvciBkZXBhcnR1cmUgZGVsYXlzLiBXaGljaCBvZiB0aGUgdGhyZWUgbWV0cmljcyAodGFzayAxLCAzIG9yIDQpIHdvdWxkIHlvdSByZWNvbW1lbmQgdGhleSB1c2UgdG8gaWRlbnRpZnkgdGhlIGFpcmxpbmVzIHRvIHBlbmFsaXplLiBXaHk/CgogICAgKyBBbnN3ZXI6CiAgICAKIyNUYXNrIHNldCAzOiBSIG1hcmtkb3duCgoxLiBNb2RpZnkgdGhlIHRleHQgYmVsb3cgYXMgcGVyIHRoZSBwcm9tcHQKICAgICsgVW5kZXJsaW5lIG1lCiAgICArIE1ha2UgbWUgYm9sZAogICAgKyBNYWtlIG1lIGEgYmxvY2sgcXVvdGUKICAgICsgTWFrZSBtZSBpdGFsaWMKICAgICsgU3RyaWtlIHRocm91Z2ggbWUKCjIuIENyZWF0ZSBhIGxldmVsIHRocmVlIGhlYWRlciBjYWxsZWQgIk15IGxldmVsIDMgaGVhZGVyIiB1bmRlciB0aGlzIGxpbmUgCgozLiBNb2RpZnkgdGhlIGNvbnRlbnQgYmVsb3cgc28gdGhhdCB0aGUgYnVsbGV0IHBvaW50cyAodW5vcmRlcmVkIGxpc3QpIHJlbmRlciBjb3JyZWN0bHkKCioqTWVzc3kgYnVsbGV0IHBvaW50cyoqCiogb25lCiogdHdvCiogdGhyZWUKCjQuIFVzZSBjaHVuayBvcHRpb25zIHRvIGhpZGUgdGhlIG91dHB1dCBhbmQgdGhlIGNvZGUgZnJvbSB0aGUgY2h1bmsgYmVsb3cgaW4gdGhlIHByZXZpZXdlZCBub3RlYm9vay4KCmBgYHtyLCByZXN1bHRzPSdoaWRlJywgZWNobz1GQUxTRX0KcHJpbnQoIkhpZGUgbWUgYW5kIHRoZSBjb2RlIHRoYXQgY3JlYXRlZCBtZSIpCmBgYAoKCg==</div>
 
 
 
