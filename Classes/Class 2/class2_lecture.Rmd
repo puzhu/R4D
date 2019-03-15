@@ -20,16 +20,14 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 3. lubridate a tidyverse package to handle dates in R
 
 ##Learning Objectives
-1. Use slack to ask questions more effectively
-2. Understand material from class 1
-3. Install and load packages
-4. Use the tidyverse portal to access information
-5. Explain the use of pipes and the dot symbol
-6. Arrange/sort a table
-7. Select columns from tabular data
-8. Filter rows from tabular data
-9. Mutate tabular data
-10. Host your notebook online using github
+1. ~Use slack to ask questions more effectively~
+2. ~Understand material from class 1~
+3. ~Install and load packages~
+4. ~Use the tidyverse portal to access information~
+5. ~Explain the use of pipes and the dot symbol~
+6. ~Arrange/sort a table~
+7. ~Select columns from tabular data~
+
 
 
 
@@ -130,14 +128,4 @@ flights %>%
 
 
 
-##Mutate
-1. Use the lubridate package to create a new date variable and arrange it in descending order
-2. Use `if_else()` syntax to create a variable that indicates whether a flight was delayed.
-
-
-```{r}
-source("../helpers.R")
-
-pickRandom()
-```
 

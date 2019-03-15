@@ -26,14 +26,29 @@ output:
 
 #Class 3 Tasks
 ##Filter rows (Task time 15 mins)
-1. Select the first three columns (year, month, day), all other columns whose names `contains()` the term "delay" and the origin column. Filter this data to show all the flights that took off in the morning (before 12:00) from JFK in December. Make sure to use pipes between the select and filter command. Refer to the shortcut for inserting a pipe (see above).
+1. Select the first three columns (year, month, day), all other columns whose names `contains()` the term "dep" and the origin column. Filter this data to show all the flights that took off in the morning (before 12:00) from JFK in December. Make sure to use pipes between the select and filter command. Refer to the shortcut for inserting a pipe (see above).
+```{r}
+flights %>% 
+    select(1:3, contains("dep"), origin) %>%
+    filter(dep_time < 1200 & origin == "JFK" & month == 12)
+```
 2. Use `top_n()` to print the most delayed departures from NYC in 2013. Read the documentation for `top_n()` on tidyverse if you are confused.
+```{r}
+flights %>% 
+    top_n(., n = 5, wt = dep_delay)
+```
+
 3. Run the code below, read the error and fix the code so that it works
 ```{r}
 flights %>% 
-    filter(month = 6 & day > 15)
+    filter(month == 6 & day > 15)
 ```
 5. Filter the flights that were between the 10th and 40th most delayed in terms of arrival (`arr_delay`) using the `dense_rank()` helper function.
+```{r}
+flights %>% 
+    filter(dense_rank(desc(arr_delay)) %in% 10:40)
+```
+
 
 ##Mutate a tibble (Task time 10 mins)
 1. Create a variable that indicates whether a flight took off in the AM or the PM.

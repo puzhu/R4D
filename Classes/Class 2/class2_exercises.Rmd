@@ -37,7 +37,7 @@ flights %>%
 2. Look at the documentation for `pull()`. Pull the column dep_delay from the flights data. Compare the output from this when you `select()` the column dep_delay. Hint use `str()` or `glimpse()` to see its data structure.
 
 ##Filter rows
-1. Select the first three columns (year, month, day), all other columns whose names `contains()` the term "delay" and the origin column. Filter this data to show only the month of December. Assign this new tibble to a variable. Make sure to use pipes between the select and filter command. Refer to the shortcut for inserting a pipe.
+1. Select the first three columns (year, month, day), all other columns whose names `contains()` the term "delay" and the origin column. Pipe this to a filter that shows only the month of December. Assign this new tibble to a variable. Make sure to use pipes between the select and filter command. Refer to the shortcut for inserting a pipe (see the top of this file).
 2. Filter the tibble you create in step 1 to show only those flights that took from "JFK" that took off in the AM.
 3. Use `top_n()` to find the most delayed departures from NYC in 2013. No need to save this. Just print out.
 4. Fix this code
