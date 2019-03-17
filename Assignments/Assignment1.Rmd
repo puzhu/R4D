@@ -9,7 +9,6 @@ output:
     theme: cosmo
     code_folding: show
     df_print: paged
-css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 ---
 
 **Due Date**: Sunday, March 24th
