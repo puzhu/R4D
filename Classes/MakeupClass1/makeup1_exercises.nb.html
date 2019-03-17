@@ -229,18 +229,61 @@ $(document).ready(function () {
 <h2>Task set 1: Create your folder structure</h2>
 <ol style="list-style-type: decimal">
 <li>Create the folder structure for the class on your computer called “yourfirstnameR4D” with the following subfolders in it - “Assignments”, “Classes” and “Data”. This will be your folder for the entire course.</li>
-<li>Create an R notebook change its YAML title to “Class 1 Exercises”</li>
-<li>Create a level 2 header called “My first exercise”</li>
-<li>Create your first code chunk (remember to use the shortcuts)<br />
-</li>
+<li>Download and save the Rmd file using the drop down at the top right of this notebook in a subfolder called “Makeup Class1” in the “Classes” folder.</li>
+<li>Create your first code chunk (remember to use the shortcuts) under this line</li>
 <li>Within it assign any value you would like to a variable. Print this value. Save the file in the “Classes” subfolder</li>
-<li>Preview the notebook.</li>
-<li>Use this notebook to take in class notes, try out things and complete in class tasks.</li>
+<li>Click on the preview button to see the notebook.</li>
+<li>Add a level two heading using <code>##</code> under this line with a short two sentence paragraph under it explaining what R markdown is.</li>
+<li>Change the author in the YAML section to your name.</li>
+<li>Hit preview again to see the differences from the first time.</li>
+</ol>
+</div>
+<div id="task-set-2-data-structures-and-types" class="section level2">
+<h2>Task set 2: Data structures and types</h2>
+<ol style="list-style-type: decimal">
+<li>Create and store a character vector (of your choice), a numeric vector (interger/double) and a factor, all of the same length</li>
+<li>Get the type (using <code>typeof()</code>), and the length (using <code>length()</code>) of the vectors you created in 1.</li>
+<li>Create a list containing all the vectors you created in 1, using <code>list()</code>.</li>
+<li>Try combining using <code>c()</code> instead of <code>list()</code>. Can you explain why the output from the two commands are different?</li>
+<li>Create a dataframe using all the vectors stored in step 1</li>
+<li>Predict the output of the following without running the code in
+<ul>
+<li><code>c(&quot;FALSE&quot;, FALSE, T, F, T, T, T)</code> = “Character”,</li>
+<li><code>c(1.0, FALSE)</code> = “numeric”,</li>
+<li><code>c(2, TRUE)</code> = “numeric”and</li>
+<li><code>c(&quot;two&quot;, 2)</code> = “character”</li>
+</ul></li>
+</ol>
+</div>
+<div id="task-set-3-package-arrange-select-and-mutate" class="section level2">
+<h2>Task set 3: Package, arrange, select and mutate</h2>
+<ol style="list-style-type: decimal">
+<li>Install and load the <code>nycflights13</code> package and the <code>tidyverse</code> package</li>
+<li>Arrange the flights data from the NY in descending order of dates (the last day of the year should be the first row of the data).</li>
+<li>Use the documentation for <code>select()</code> on the tidyverse portal to find a way to create a new tibble that contains the first three columns (year, month, day) and all other columns whose names <code>contains()</code> the term “delay”</li>
+<li>Create a variable that indicates whether a flight took off in the AM or the PM, using <code>if_else()</code>. Make sure to have the help file for <code>if_else()</code> open when you do this.</li>
+</ol>
+</div>
+<div id="task-set-4-filter" class="section level2">
+<h2>Task set 4: Filter</h2>
+<ol style="list-style-type: decimal">
+<li>Filter the flights data to only show the flights in the month of December</li>
+<li>Filter all the flights with departure that were delayed by more than 2 hours in the month of December</li>
+<li>Show all the rows for which <code>arr_delay</code> is missing (<code>NA</code>).</li>
+<li>Filter the flights that were between the 10th and 40th most delayed in terms of arrival (<code>arr_delay</code>) using the <code>dense_rank()</code> helper function.</li>
+</ol>
+</div>
+<div id="task-set-5-grouping" class="section level2">
+<h2>Task set 5: Grouping</h2>
+<ol style="list-style-type: decimal">
+<li>Use <code>group_by()</code> and <code>summarise()</code> to find the average arrival delay to different destinations (<code>dest</code>).</li>
+<li>Create a new variable in the flights data that is difference between the departure delay for each flight and the monthly average delay.</li>
+<li>Use <code>group_by()</code> and <code>filter()</code> to identify the flights that had the highest delay for every month in 2013.</li>
 </ol>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFrZSB1cCBjbGFzcyAxIC0gRXhlcmNpc2VzIgphdXRob3I6IEhhcmkgU3ViaGFzaApkYXRlOiAiRGF0ZSBjcmVhdGVkOiBgciBTeXMuRGF0ZSgpYCIKb3V0cHV0OgogIGh0bWxfbm90ZWJvb2s6CiAgICBoaWdobGlnaHQ6IGthdGUKICAgIHNtYXJ0OiB5ZXMKICAgIHRoZW1lOiBjb3NtbwogICAgY29kZV9mb2xkaW5nOiBzaG93CiAgICBkZl9wcmludDogcGFnZWQKLS0tCgoKIyNUYXNrIHNldCAxOiBDcmVhdGUgeW91ciBmb2xkZXIgc3RydWN0dXJlCgoxLiBDcmVhdGUgdGhlIGZvbGRlciBzdHJ1Y3R1cmUgZm9yIHRoZSBjbGFzcyBvbiB5b3VyIGNvbXB1dGVyIGNhbGxlZCAieW91cmZpcnN0bmFtZVI0RCIgd2l0aCB0aGUgZm9sbG93aW5nIHN1YmZvbGRlcnMgaW4gaXQgLSAiQXNzaWdubWVudHMiLCAiQ2xhc3NlcyIgYW5kICJEYXRhIi4gVGhpcyB3aWxsIGJlIHlvdXIgZm9sZGVyIGZvciB0aGUgZW50aXJlIGNvdXJzZS4KMi4gQ3JlYXRlIGFuIFIgbm90ZWJvb2sgY2hhbmdlIGl0cyBZQU1MIHRpdGxlIHRvICJDbGFzcyAxIEV4ZXJjaXNlcyIKMy4gQ3JlYXRlIGEgbGV2ZWwgMiBoZWFkZXIgY2FsbGVkICJNeSBmaXJzdCBleGVyY2lzZSIKNC4gQ3JlYXRlIHlvdXIgZmlyc3QgY29kZSBjaHVuayAocmVtZW1iZXIgdG8gdXNlIHRoZSBzaG9ydGN1dHMpICAKNS4gV2l0aGluIGl0IGFzc2lnbiBhbnkgdmFsdWUgeW91IHdvdWxkIGxpa2UgdG8gYSB2YXJpYWJsZS4gUHJpbnQgdGhpcyB2YWx1ZS4gU2F2ZSB0aGUgZmlsZSBpbiB0aGUgIkNsYXNzZXMiIHN1YmZvbGRlcgo2LiBQcmV2aWV3IHRoZSBub3RlYm9vay4gCjcuIFVzZSB0aGlzIG5vdGVib29rIHRvIHRha2UgaW4gY2xhc3Mgbm90ZXMsIHRyeSBvdXQgdGhpbmdzIGFuZCBjb21wbGV0ZSBpbiBjbGFzcyB0YXNrcy4K</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFrZSB1cCBjbGFzcyAxIC0gRXhlcmNpc2VzIgphdXRob3I6IEhhcmkgU3ViaGFzaApkYXRlOiAiRGF0ZSBjcmVhdGVkOiBgciBTeXMuRGF0ZSgpYCIKb3V0cHV0OgogIGh0bWxfbm90ZWJvb2s6CiAgICBoaWdobGlnaHQ6IGthdGUKICAgIHNtYXJ0OiB5ZXMKICAgIHRoZW1lOiBjb3NtbwogICAgY29kZV9mb2xkaW5nOiBzaG93CiAgICBkZl9wcmludDogcGFnZWQKLS0tCiMjVGFzayBzZXQgMTogQ3JlYXRlIHlvdXIgZm9sZGVyIHN0cnVjdHVyZQoxLiBDcmVhdGUgdGhlIGZvbGRlciBzdHJ1Y3R1cmUgZm9yIHRoZSBjbGFzcyBvbiB5b3VyIGNvbXB1dGVyIGNhbGxlZCAieW91cmZpcnN0bmFtZVI0RCIgd2l0aCB0aGUgZm9sbG93aW5nIHN1YmZvbGRlcnMgaW4gaXQgLSAiQXNzaWdubWVudHMiLCAiQ2xhc3NlcyIgYW5kICJEYXRhIi4gVGhpcyB3aWxsIGJlIHlvdXIgZm9sZGVyIGZvciB0aGUgZW50aXJlIGNvdXJzZS4KMi4gRG93bmxvYWQgYW5kIHNhdmUgdGhlIFJtZCBmaWxlIHVzaW5nIHRoZSBkcm9wIGRvd24gYXQgdGhlIHRvcCByaWdodCBvZiB0aGlzIG5vdGVib29rIGluIGEgc3ViZm9sZGVyIGNhbGxlZCAiTWFrZXVwIENsYXNzMSIgaW4gdGhlICJDbGFzc2VzIiBmb2xkZXIuCjMuIENyZWF0ZSB5b3VyIGZpcnN0IGNvZGUgY2h1bmsgKHJlbWVtYmVyIHRvIHVzZSB0aGUgc2hvcnRjdXRzKSB1bmRlciB0aGlzIGxpbmUKNS4gV2l0aGluIGl0IGFzc2lnbiBhbnkgdmFsdWUgeW91IHdvdWxkIGxpa2UgdG8gYSB2YXJpYWJsZS4gUHJpbnQgdGhpcyB2YWx1ZS4gU2F2ZSB0aGUgZmlsZSBpbiB0aGUgIkNsYXNzZXMiIHN1YmZvbGRlcgo2LiBDbGljayBvbiB0aGUgcHJldmlldyBidXR0b24gdG8gc2VlIHRoZSBub3RlYm9vay4gCjcuIEFkZCBhIGxldmVsIHR3byBoZWFkaW5nIHVzaW5nIGAjI2AgdW5kZXIgdGhpcyBsaW5lIHdpdGggYSBzaG9ydCB0d28gc2VudGVuY2UgcGFyYWdyYXBoIHVuZGVyIGl0IGV4cGxhaW5pbmcgd2hhdCBSIG1hcmtkb3duIGlzLgo4LiBDaGFuZ2UgdGhlIGF1dGhvciBpbiB0aGUgWUFNTCBzZWN0aW9uIHRvIHlvdXIgbmFtZS4KOS4gSGl0IHByZXZpZXcgYWdhaW4gdG8gc2VlIHRoZSBkaWZmZXJlbmNlcyBmcm9tIHRoZSBmaXJzdCB0aW1lLgoKIyNUYXNrIHNldCAyOiBEYXRhIHN0cnVjdHVyZXMgYW5kIHR5cGVzCjEuIENyZWF0ZSBhbmQgc3RvcmUgYSBjaGFyYWN0ZXIgdmVjdG9yIChvZiB5b3VyIGNob2ljZSksIGEgbnVtZXJpYyB2ZWN0b3IgKGludGVyZ2VyL2RvdWJsZSkgYW5kIGEgZmFjdG9yLCBhbGwgb2YgdGhlIHNhbWUgbGVuZ3RoCjIuIEdldCB0aGUgdHlwZSAodXNpbmcgYHR5cGVvZigpYCksIGFuZCB0aGUgbGVuZ3RoICh1c2luZyBgbGVuZ3RoKClgKSBvZiB0aGUgdmVjdG9ycyB5b3UgY3JlYXRlZCBpbiAxLgozLiBDcmVhdGUgYSBsaXN0IGNvbnRhaW5pbmcgYWxsIHRoZSB2ZWN0b3JzIHlvdSBjcmVhdGVkIGluIDEsIHVzaW5nIGBsaXN0KClgLgo0LiBUcnkgY29tYmluaW5nIHVzaW5nIGBjKClgIGluc3RlYWQgb2YgYGxpc3QoKWAuIENhbiB5b3UgZXhwbGFpbiB3aHkgdGhlIG91dHB1dCBmcm9tIHRoZSB0d28gY29tbWFuZHMgYXJlIGRpZmZlcmVudD8KNS4gQ3JlYXRlIGEgZGF0YWZyYW1lIHVzaW5nIGFsbCB0aGUgdmVjdG9ycyBzdG9yZWQgaW4gc3RlcCAxCjYuIFByZWRpY3QgdGhlIG91dHB1dCBvZiB0aGUgZm9sbG93aW5nIHdpdGhvdXQgcnVubmluZyB0aGUgY29kZSBpbiAKICAgICsgYGMoIkZBTFNFIiwgRkFMU0UsIFQsIEYsIFQsIFQsIFQpYCA9ICJDaGFyYWN0ZXIiLCAKICAgICsgYGMoMS4wLCBGQUxTRSlgID0gIm51bWVyaWMiLCAKICAgICsgYGMoMiwgVFJVRSlgICA9ICJudW1lcmljImFuZCAKICAgICsgYGMoInR3byIsIDIpYCA9ICJjaGFyYWN0ZXIiCiAgICAKIyNUYXNrIHNldCAzOiBQYWNrYWdlLCBhcnJhbmdlLCBzZWxlY3QgYW5kIG11dGF0ZQoxLiBJbnN0YWxsIGFuZCBsb2FkIHRoZSBgbnljZmxpZ2h0czEzYCBwYWNrYWdlIGFuZCB0aGUgYHRpZHl2ZXJzZWAgcGFja2FnZQoyLiBBcnJhbmdlIHRoZSBmbGlnaHRzIGRhdGEgZnJvbSB0aGUgTlkgaW4gZGVzY2VuZGluZyBvcmRlciBvZiBkYXRlcyAodGhlIGxhc3QgZGF5IG9mIHRoZSB5ZWFyIHNob3VsZCBiZSB0aGUgZmlyc3Qgcm93IG9mIHRoZSBkYXRhKS4KMy4gVXNlIHRoZSBkb2N1bWVudGF0aW9uIGZvciBgc2VsZWN0KClgIG9uIHRoZSB0aWR5dmVyc2UgcG9ydGFsIHRvIGZpbmQgYSB3YXkgdG8gY3JlYXRlIGEgbmV3IHRpYmJsZSB0aGF0IGNvbnRhaW5zIHRoZSBmaXJzdCB0aHJlZSBjb2x1bW5zICh5ZWFyLCBtb250aCwgZGF5KSBhbmQgYWxsIG90aGVyIGNvbHVtbnMgd2hvc2UgbmFtZXMgYGNvbnRhaW5zKClgIHRoZSB0ZXJtICJkZWxheSIKNC4gQ3JlYXRlIGEgdmFyaWFibGUgdGhhdCBpbmRpY2F0ZXMgd2hldGhlciBhIGZsaWdodCB0b29rIG9mZiBpbiB0aGUgQU0gb3IgdGhlIFBNLCB1c2luZyBgaWZfZWxzZSgpYC4gTWFrZSBzdXJlIHRvIGhhdmUgdGhlIGhlbHAgZmlsZSBmb3IgYGlmX2Vsc2UoKWAgb3BlbiB3aGVuIHlvdSBkbyB0aGlzLgoKIyNUYXNrIHNldCA0OiBGaWx0ZXIKMS4gRmlsdGVyIHRoZSBmbGlnaHRzIGRhdGEgdG8gb25seSBzaG93IHRoZSBmbGlnaHRzIGluIHRoZSBtb250aCBvZiBEZWNlbWJlcgoyLiBGaWx0ZXIgYWxsIHRoZSBmbGlnaHRzIHdpdGggZGVwYXJ0dXJlIHRoYXQgd2VyZSBkZWxheWVkIGJ5IG1vcmUgdGhhbiAyIGhvdXJzIGluIHRoZSBtb250aCBvZiBEZWNlbWJlcgozLiBTaG93IGFsbCB0aGUgcm93cyBmb3Igd2hpY2ggYGFycl9kZWxheWAgaXMgbWlzc2luZyAoYE5BYCkuCjQuIEZpbHRlciB0aGUgZmxpZ2h0cyB0aGF0IHdlcmUgYmV0d2VlbiB0aGUgMTB0aCBhbmQgNDB0aCBtb3N0IGRlbGF5ZWQgaW4gdGVybXMgb2YgYXJyaXZhbCAoYGFycl9kZWxheWApIHVzaW5nIHRoZSBgZGVuc2VfcmFuaygpYCBoZWxwZXIgZnVuY3Rpb24uCgojI1Rhc2sgc2V0IDU6IEdyb3VwaW5nCjEuIFVzZSBgZ3JvdXBfYnkoKWAgYW5kIGBzdW1tYXJpc2UoKWAgdG8gZmluZCB0aGUgYXZlcmFnZSBhcnJpdmFsIGRlbGF5IHRvIGRpZmZlcmVudCBkZXN0aW5hdGlvbnMgKGBkZXN0YCkuCjIuIENyZWF0ZSBhIG5ldyB2YXJpYWJsZSBpbiB0aGUgZmxpZ2h0cyBkYXRhIHRoYXQgaXMgZGlmZmVyZW5jZSBiZXR3ZWVuIHRoZSBkZXBhcnR1cmUgZGVsYXkgZm9yIGVhY2ggZmxpZ2h0IGFuZCB0aGUgbW9udGhseSBhdmVyYWdlIGRlbGF5LgozLiBVc2UgYGdyb3VwX2J5KClgIGFuZCBgZmlsdGVyKClgIHRvIGlkZW50aWZ5IHRoZSBmbGlnaHRzIHRoYXQgaGFkIHRoZSBoaWdoZXN0IGRlbGF5IGZvciBldmVyeSBtb250aCBpbiAyMDEzLgoKCgoKCg==</div>
 
 
 
