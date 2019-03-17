@@ -50,13 +50,35 @@ output:
 1. Install and load the `nycflights13` package and the `tidyverse` package
 2. Arrange the flights data from the NY in descending order of dates (the last day of the year should be the first row of the data).
 3. Use the documentation for `select()` on the tidyverse portal to find a way to create a new tibble that contains the first three columns (year, month, day) and all other columns whose names `contains()` the term "delay"
-4. Create a variable that indicates whether a flight took off in the AM or the PM, using `if_else()`. Make sure to have the help file for `if_else()` open when you do this.
+4. Create a column that indicates whether a flight took off in the AM or the PM, using `if_else()`. Make sure to have the help file for `if_else()` open when you do this.
 
 ##Task set 4: Filter
 1. Filter the flights data to only show the flights in the month of December
+```{r}
+flights %>% 
+    filter(month == 12)
+```
+
 2. Filter all the flights with departure that were delayed by more than 2 hours in the month of December
+```{r}
+flights %>% 
+    filter(month == 12 & dep_delay > 120)
+```
+
 3. Show all the rows for which `arr_delay` is missing (`NA`).
+```{r}
+flights %>% 
+    filter(is.na(arr_delay))
+```
+
 4. Filter the flights that were between the 10th and 40th most delayed in terms of arrival (`arr_delay`) using the `dense_rank()` helper function.
+```{r}
+flights %>% 
+    mutate(arrDelayRank = dense_rank(desc(arr_delay))) %>% 
+    select(1:3, arr_delay, arrDelayRank) %>% 
+    arrange(desc(arr_delay)) %>% 
+    filter(arrDelayRank %in% 10:40)
+```
 
 ##Task set 5: Grouping
 1. Use `group_by()` and `summarise()` to find the average arrival delay to different destinations (`dest`).
