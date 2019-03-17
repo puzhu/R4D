@@ -9,3 +9,5 @@ This repository contains all the material for the R4D course - March 2019
 3. Class 3 - March 14th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%203/class3_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%203/class3_exercises.nb.html) | [Class Video](https://youtu.be/6H3xNkszIGo)
 
 **[ASSIGNMENT 1](https://puzhu.github.io/R4D/Assignments/Assignment1.nb.html)**
+
+4. Makeup class 1 - March 17th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_exercises.nb.html) | [Class Video](https://youtu.be/6H3xNkszIGo)
