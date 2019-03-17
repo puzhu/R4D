@@ -14,7 +14,7 @@ output:
 
 1. Give your answers below each numbered task. Enter a new line.
 2. The tasks are clustered under level 2 headers (`##`). Do one set at a time.
-3. Preview your notebook at the end of each in class exercise task set. Does the notebook look formatted correctly? If not fix it. In most cases the issue is
+3. Preview your notebook at the end of each in class exercise task set. Does the notebook look formatted correctly? If not fix it.
 
 **KEYBOARD SHORTCUTS**:
 

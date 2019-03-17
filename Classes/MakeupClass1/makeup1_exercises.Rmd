@@ -10,6 +10,20 @@ output:
     code_folding: show
     df_print: paged
 ---
+**INSTRUCTIONS**:
+
+1. Give your answers below each numbered task. Enter a new line.
+2. The tasks are clustered under level 2 headers (`##`). Do one set at a time.
+3. Preview your notebook at the end of each in class exercise task set. Does the notebook look formatted correctly? If not fix it.
+
+**KEYBOARD SHORTCUTS**:
+
+1) Assignment operator (<-) is `Alt+-` for Windows and `Option+-` for Mac
+2) Insert new code chunk `Ctrl+Alt+I` for Windows and `Command+Option+I` for Mac
+3) Run a line of code `Ctrl+Enter` for Windows and `Command+Enter` for Mac
+4) Run all the code within a chunk `Ctrl+Shift+Enter` for Windows and `Command+Shift+Enter` for Mac
+5) Insert a pipe operator (%>%) `Ctrl+Shift+M` for Windows and `Command+Shift+M` for Mac
+
 ##Task set 1: Create your folder structure
 1. Create the folder structure for the class on your computer called "yourfirstnameR4D" with the following subfolders in it - "Assignments", "Classes" and "Data". This will be your folder for the entire course.
 2. Download and save the Rmd file using the drop down at the top right of this notebook in a subfolder called "Makeup Class1" in the "Classes" folder.
