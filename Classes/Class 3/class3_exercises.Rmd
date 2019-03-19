@@ -1,5 +1,5 @@
 ---
-title: "Class 2 - In class exercises"
+title: "Class 3 - In class exercises"
 author: Hari Subhash
 date: "Date created: `r Sys.Date()`"
 output:
