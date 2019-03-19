@@ -37,7 +37,6 @@ output:
 1. Create a histogram of arrival delay.
 2. Change the statistic for the histogram from the default of "count" to "density" and plot again.
 3. Run the following code to create a stacked column chart. Look through the documentation and examples for `geom_col()` on the tidyverse portal to fix the code below and create a chart where the bars for each origin are not stacked.
-
 ```{r}
 flights %>% 
     group_by(origin, month) %>% 
@@ -46,8 +45,7 @@ flights %>%
     geom_col()
 ```
 4. Read the documentation for `geom_point()` to create a scatter plot that compares arrival delay with departure delay. How would you describe the relationship between the two variables?
-5. Use the chunk below to group the data by `time_hour` and calculate the mean departure delay and pipe to a ggplot to create a line chart showing `time_hour` on the x-axis and the mean departure delay on the y-axis. Can you identify the spikes in the total 
-
+5. Use the chunk below to group the data by `time_hour` and calculate the mean departure delay and pipe to a ggplot to create a line chart showing `time_hour` on the x-axis and the mean departure delay on the y-axis. Can you identify the spikes in the average delay? Which parts of this would you zoom into to get a better sense for the average delay? 
 ```{r, fig.width=12}
 
 ```
