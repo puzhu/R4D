@@ -87,11 +87,16 @@ flights %>%
 ```
 
 ##Lets factor
-Factor variables are the way in which R handles categorical variables
+Factor variables are the way in which R handles categorical variables. The `sample()` function is useful to create a new vector that randomly picks from an input vector. Lets use it to create a atomic vector that codes gender. See its implementation below.
 ```{r}
-genderVar <- sample(x = c("M", "F", "Other"), size = 200,  replace = T)
+genderVar <- sample(x = c("M", "F", "Other"), size = 20,  replace = T)
 
 table(genderVar)
+```
+
+The vector is printed below.
+```{r}
+genderVar
 ```
 
 ```{r}
@@ -99,24 +104,27 @@ fctGender <- factor(genderVar)
 
 str(fctGender)
 ```
-
+The `table()` function counts the number of occurences of each value within a vector (or combinations of vectors). Its a quick way to get a sense for the values within a particular data structure.
 ```{r}
 table(fctGender)
 ```
 
-
+DON'T DO THIS! This is a mistake.
 ```{r}
 levels(fctGender) <- c("Other", "F", "M")
 ```
-
+The levels function does not reorder as expected, it simply renames the levels. Confusingly similar to what the labels argument does within the factor function. As you notice, the assigning values using this simply swaps the labels around i.e. (F changed to Other, M to F and, Other to M)
 
 ```{r}
 table(fctGender)
 ```
 
+Instead always use the `factor()` command to set the order of the levels explicitly using the `levels` argument below.
 ```{r}
-fctGenderFinal <- factor(genderVar, labels = c("Other", "F", "M"), levels = c("Other", "Female", "Male"))
-
+fctGenderFinal <- factor(genderVar, levels = c("Other", "F", "M"), labels = c("Other", "Female", "Male"))
+```
+The output of this is ordered and labelled differently but matches what we see in the beginning.
+```{r}
 table(fctGenderFinal)
 ```
 
@@ -134,7 +142,7 @@ knitr::include_graphics("../../Assets/anscombeSummary.png")
 
 ##Lets make some plots
 
-Start with a basic histogram
+Start with a basic histogram.
 ```{r}
 flights %>% 
     filter(dep_delay < 250) %>% 
@@ -158,13 +166,11 @@ ggplot(data = flights, mapping = aes(carrier)) +
 
 Lets make a column chart (regular world bar chart)
 ```{r}
-
 flights %>% 
     group_by(carrier) %>% 
     summarise(meanDelay = mean(dep_delay, na.rm = T)) %>% 
     ggplot(aes(x = carrier, y = meanDelay)) +
     geom_col()
-
 ```
 
 
