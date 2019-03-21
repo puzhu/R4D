@@ -10,5 +10,7 @@ This repository contains all the material for the R4D course - March 2019
 
 **[ASSIGNMENT 1](https://puzhu.github.io/R4D/Assignments/Assignment1.nb.html)**
 
-4. Makeup class 1 - March 17th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_exercises.nb.html) | [Class Video](https://youtu.be/7TWPV3qo2Nc)
-5. Class 4 - March 19th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%204/class4_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%204/class4_exercises.nb.html) | [Class Video]()
+**Makeup class 1** - [Class Lecture](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_exercises.nb.html) | [Class Video](https://youtu.be/7TWPV3qo2Nc)
+
+4. Class 4 - March 19th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%204/class4_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%204/class4_exercises.nb.html) | [Class Video](https://youtu.be/gTG62gKanUQ)
+5. Class 5 - March 21st, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%205/class5_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%205/class5_exercises.nb.html) | [Class Video](https://youtu.be/gTG62gKanUQ)
