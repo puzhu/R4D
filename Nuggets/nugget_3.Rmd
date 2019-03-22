@@ -43,7 +43,7 @@ output:
 9. Use this function `identical()` to establish that the `pulledCarrier` and `flightCarrier` are the same.
 10. Now try the same step as 8 with `select()` instead of pull. Save this as `selectedCarrier`
 11. Use the `identical()` function to establish that `selectedCarrier` and `flightCarrier` are not the same. 
-12. Why aren't `selectedCarrier` and `flightCarrier` identical?
+12. Why aren't `selectedCarrier` and `flightCarrier` identical? Think about the data structure that `select()` returns compared to that for `pull()`/`$`
 
 
 
