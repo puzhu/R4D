@@ -1,0 +1,62 @@
+---
+title: "Week 3 - Daily R Nuggets"
+author: Hari Subhash
+date: "Date created: `r Sys.Date()`"
+output:
+  html_notebook:
+    highlight: kate
+    smart: yes
+    theme: cosmo
+    code_folding: show
+    df_print: paged
+---
+**CHEATSHEETS**
+
+1. [Data visualization](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf)
+2. [Data Manipulation](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf)
+
+**KEYBOARD SHORTCUTS**:
+
+1. Assignment operator (<-) is `Alt+-` for Windows and `Option+-` for Mac
+2. Insert new code chunk `Ctrl+Alt+I` for Windows and `Command+Option+I` for Mac
+3. Run a line of code `Ctrl+Enter` for Windows and `Command+Enter` for Mac
+4. Run all the code within a chunk `Ctrl+Shift+Enter` for Windows and `Command+Shift+Enter` for Mac
+5. Insert a pipe operator (%>%) `Ctrl+Shift+M` for Windows and `Command+Shift+M` for Mac
+
+**INSTRUCTIONS**: 
+
+1. Use the cheatsheets, shortcuts, help files and the internet to solve these tasks. If nothing works post your error on the Questions channel on Slack using a code snippet with the error message as the title.
+2. You can complete these as daily tasks or in bulk. Each task set should take you about 30 to 45 minutes to complete. You will be using the nycflights13 and tidyverse packages for these tasks.
+3. Provide the answers to each question under it. 
+
+**DEADLINE**: Wed 27th, 2019
+
+##Day 1
+1. Get the structure of the flights data set using the `str()` command.
+2. The `$` notation is used in base R to pull out columns from a data frame. Its usage is as follows `df$columnName`, where df is the dataframe (or tibble) you are interested in pulling a column denoted by columnName from. Use this syntax to pull out the `carrier` column from the flights tibble and store it in a variable called `flightCarrier`.
+3. Get the length of the `flightCarrier` vector and compare it with the number of rows in the flights data using the `==` operator. It should return true. Search the internet for the function to find the number of rows of a dataframe.
+4. Use the `unique()` function on the `flightCarrier` variable you created in the previous step to find the unique list of carriers in the flights dataset. Replace the `flightCarrier` with this new vector of unique values.
+5. Print the new length of the `flightCarrier` vector.
+6. Get the data type of the `flightCarrier` vector using `typeof()`, is it the same as the type denoted in `str()`. (The output from the `str()` function abbreviates the type so for instance integer is denoted as int.)
+7. Use pipes to combine steps 2 and 4. Like so `df$columnName %>% unique()`.
+8. Use the `pull()` function instead of the `$` notation to achieve the same result as above. Save this as `pulledCarrier`
+9. Use this function `identical()` to establish that the `pulledCarrier` and `flightCarrier` are the same.
+10. Now try the same step as 8 with `select()` instead of pull. Save this as `selectedCarrier`
+11. Use the `identical()` function to establish that `selectedCarrier` and `flightCarrier` are not the same. 
+12. Why aren't `selectedCarrier` and `flightCarrier` identical?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
