@@ -18,13 +18,13 @@ This repository contains all the material for the R4D course - March 2019
 
 **[ASSIGNMENT 1](https://puzhu.github.io/R4D/Assignments/Assignment%201/Assignment1.nb.html)**
 
-1. Bobby - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Bobby_Assignment1.nb.html) | [Assessment]()
-2. Fahima - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Fahima_Assignment1.nb.html) | [Assessment]()
-3. Ian - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Ian_Assignment1.nb.html) | [Assessment]()
-4. Jordan - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Jordan_Assignment1.nb.html) | [Assessment]()
-5. Mehrnoosh - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Mehrnoosh_Assignment1.nb.html) | [Assessment]()
-6. Vinoy - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Vinoy_Assignment1.nb.html) | [Assessment]()
-7. Zeenat - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Zeenat_Assignment1.nb.html) | [Assessment]()
+1. Bobby - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Bobby_Assignment1.nb.html) | [Assessment]()
+2. Fahima - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Fahima_Assignment1.nb.html) | [Assessment]()
+3. Ian - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Ian_Assignment1.nb.html) | [Assessment]()
+4. Jordan - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Jordan_Assignment1.nb.html) | [Assessment]()
+5. Mehrnoosh - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Mehrnoosh_Assignment1.nb.html) | [Assessment]()
+6. Vinoy - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Vinoy_Assignment1.nb.html) | [Assessment]()
+7. Zeenat - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Zeenat_Assignment1.nb.html) | [Assessment]()
 
 ## Week 3
 
