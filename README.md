@@ -14,7 +14,17 @@ This repository contains all the material for the R4D course - March 2019
 2. Class 3 - March 14th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%203/class3_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%203/class3_exercises.nb.html) | [Class Video](https://youtu.be/6H3xNkszIGo)
 3. Makeup class 1 - [Class Lecture](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/MakeupClass1/makeup1_exercises.nb.html) | [Class Video](https://youtu.be/7TWPV3qo2Nc)
 
-**[ASSIGNMENT 1](https://puzhu.github.io/R4D/Assignments/Assignment1.nb.html)**
+## Assignment 1
+
+**[ASSIGNMENT 1](https://puzhu.github.io/R4D/Assignments/Assignment%201/Assignment1.nb.html)**
+
+1. Bobby - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Bobby_Assignment1.nb.html) | [Assessment]()
+2. Fahima - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Fahima_Assignment1.nb.html) | [Assessment]()
+3. Ian - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Ian_Assignment1.nb.html) | [Assessment]()
+4. Jordan - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Jordan_Assignment1.nb.html) | [Assessment]()
+5. Mehrnoosh - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Mehrnoosh_Assignment1.nb.html) | [Assessment]()
+6. Vinoy - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Vinoy_Assignment1.nb.html) | [Assessment]()
+7. Zeenat - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Zeenat_Assignment1.nb.html) | [Assessment]()
 
 ## Week 3
 
