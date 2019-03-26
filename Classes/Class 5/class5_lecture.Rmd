@@ -20,8 +20,8 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
     + ~~Scatter plot~~
     + ~~Line charts~~
     + ~~Column chart~~
-2. Make facetted plots
-3. Draw multiple geoms in one plot
+2. ~~Make facetted plots~~
+3. ~~Draw multiple geoms in one plot~~
 4. Learn to make beautiful charts using
     + Aesthetics (alpha, colour etc.)
     + Scales
