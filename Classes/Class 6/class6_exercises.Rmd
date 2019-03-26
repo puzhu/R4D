@@ -35,6 +35,34 @@ output:
 19. Add a `facet_wrap()` with continents as the facets.
 20. Modify the `facet_wrap()` function so that all the charts display in a single row. Look at the help file for `facet_wrap()` to figure out how to do this.
 
+##Task Set 2: Make me pretty
+**Time**: 10 minutes
 
+1. Pick any of the charts that you made in the previous section and make it pretty
+    + Add axis labels and chart title
+    + Any additional aesthetics to make it prettier
+    + Choose a theme template (either from ggthemes or from ggplot) (Beware: some of the themes have effects on things like axis titles, text etc.)
+    + Make any additional changes you would like to make it more attractive
+2. Save this plot using `ggsave()` as a png and share it on the class4 channel.
+
+
+##Task Set 3: Extra time
+**Time**: 30 minutes
+
+1. Create a multiline chart showing the gdpPercap trends over the years for different continents.  Each continent should have a line that is a different colour from the others. Make it pretty.
+
+```{r}
+gapminder %>% 
+    group_by(continent, year) %>% 
+    summarise(meanGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ggplot(aes(x = year, y = meanGDP, colour = continent)) +
+    geom_line() +
+    directlabels::geom_dl(aes(label = continent), method = "last.bumpup")
+```
+
+2. Install the directlabels package.
+3. Use the `geom_dl()` function from this package to attach labels showing the names of the continents right next to the line. Make sure the labels have the same colour as the lines and that they are visible. Remove the legend using the `theme()` function. Check out different positioning methods here: http://directlabels.r-forge.r-project.org/docs/index.html
+4. Install the cowplots package.
+5. Create the same plot as above but this time save it to a variable. Create the exact same plot but for population instead of gdpPercap. Use `plot_grid()` from the cowplots package to show these two plots next to each other. 
 
 

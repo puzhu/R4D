@@ -22,18 +22,7 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
     + ~~Column chart~~
 2. ~~Make facetted plots~~
 3. ~~Draw multiple geoms in one plot~~
-4. Learn to make beautiful charts using
-    + Aesthetics (alpha, colour etc.)
-    + Scales
-    + Theme
-    + Labels and annotations
-5. Save a plot
-6. Some extensions
-    + ggthemes
-    + gganimate
-    + ggforce
-    + ggrepel
-7. Build a complex chart together
+
 
 
 ##Recap

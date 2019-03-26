@@ -11,8 +11,10 @@ output:
     df_print: paged
 css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 ---
+**LEARNING OBJECTIVE**: : Use *ggplot2* along with its *extensions* to make charts that are *work ready*.
 
 **TOPICS**
+
 1. Housekeeping
     + Learning plan for the next two weeks
     + Thoughts on assignment and daily tasks
@@ -22,10 +24,13 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
     + Scales
     + Theme
     + Labels and annotations
-5. Save a plot
-6. Discuss extensions
-    + ggthemes
-    + gganimate
-    + ggforce
-    + ggrepel
-7. Build a complex chart together
+3. Save a plot
+4. Discuss extensions and helpers
+    + [ggthemes](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
+    + [gganimate](https://gganimate.com/)
+    + [ggforce](https://www.data-imaginist.com/2019/the-ggforce-awakens-again/)
+    + [ggrepel](https://github.com/slowkow/ggrepel)
+    + [scales](https://scales.r-lib.org/)
+    + [directlabels](http://directlabels.r-forge.r-project.org/)
+    + [Many more](https://www.ggplot2-exts.org/gallery/)
+

@@ -114,7 +114,7 @@ ggplot(flights, aes(x = arr_delay, y = dep_delay)) +
 1. Take any plot that you made in any of the previous set of tasks and
     + Add axis labels and chart title
     + Any additional aesthetics to make it prettier
-    + Choose a theme template (either from ggthemes or from ggplot)
+    + Choose a theme template from ggthemes (you will have to install it and then load it using `library()` before you can use it.)
     + Make any additional changes you would like to make it more attractive
 2. Save this plot using `ggsave()` as a png and share it on the class4 channel.
 

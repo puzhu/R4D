@@ -231,10 +231,37 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<p><strong>TOPICS</strong> 1. Housekeeping + Learning plan for the next two weeks + Thoughts on assignment and daily tasks + Posting errors and issues 2. Make beautiful charts using + Aesthetics (alpha, colour etc.) + Scales + Theme + Labels and annotations 5. Save a plot 6. Discuss extensions + ggthemes + gganimate + ggforce + ggrepel 7. Build a complex chart together</p>
+<p><strong>LEARNING OBJECTIVE</strong>: : Use <em>ggplot2</em> along with its <em>extensions</em> to make charts that are <em>work ready</em>.</p>
+<p><strong>TOPICS</strong></p>
+<ol style="list-style-type: decimal">
+<li>Housekeeping
+<ul>
+<li>Learning plan for the next two weeks</li>
+<li>Thoughts on assignment and daily tasks</li>
+<li>Posting errors and issues</li>
+</ul></li>
+<li>Make beautiful charts using
+<ul>
+<li>Aesthetics (alpha, colour etc.)</li>
+<li>Scales</li>
+<li>Theme</li>
+<li>Labels and annotations</li>
+</ul></li>
+<li>Save a plot</li>
+<li>Discuss extensions and helpers
+<ul>
+<li><a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">ggthemes</a></li>
+<li><a href="https://gganimate.com/">gganimate</a></li>
+<li><a href="https://www.data-imaginist.com/2019/the-ggforce-awakens-again/">ggforce</a></li>
+<li><a href="https://github.com/slowkow/ggrepel">ggrepel</a></li>
+<li><a href="https://scales.r-lib.org/">scales</a></li>
+<li><a href="http://directlabels.r-forge.r-project.org/">directlabels</a></li>
+<li><a href="https://www.ggplot2-exts.org/gallery/">Many more</a></li>
+</ul></li>
+</ol>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2xhc3MgNiAtIExlY3R1cmUiCmF1dGhvcjogSGFyaSBTdWJoYXNoCmRhdGU6ICJEYXRlIGNyZWF0ZWQ6IGByIFN5cy5EYXRlKClgIgpvdXRwdXQ6CiAgaHRtbF9ub3RlYm9vazoKICAgIGhpZ2hsaWdodDoga2F0ZQogICAgc21hcnQ6IHllcwogICAgdGhlbWU6IGNvc21vCiAgICBjb2RlX2ZvbGRpbmc6IHNob3cKICAgIGRmX3ByaW50OiBwYWdlZApjc3M6IC9Vc2Vycy9oc3ViaGFzaC9Eb2N1bWVudHMvUjREL0Fzc2V0cy9jdXN0b20uY3NzCi0tLQoKKipUT1BJQ1MqKgoxLiBIb3VzZWtlZXBpbmcKICAgICsgTGVhcm5pbmcgcGxhbiBmb3IgdGhlIG5leHQgdHdvIHdlZWtzCiAgICArIFRob3VnaHRzIG9uIGFzc2lnbm1lbnQgYW5kIGRhaWx5IHRhc2tzCiAgICArIFBvc3RpbmcgZXJyb3JzIGFuZCBpc3N1ZXMKMi4gTWFrZSBiZWF1dGlmdWwgY2hhcnRzIHVzaW5nCiAgICArIEFlc3RoZXRpY3MgKGFscGhhLCBjb2xvdXIgZXRjLikKICAgICsgU2NhbGVzCiAgICArIFRoZW1lCiAgICArIExhYmVscyBhbmQgYW5ub3RhdGlvbnMKNS4gU2F2ZSBhIHBsb3QKNi4gRGlzY3VzcyBleHRlbnNpb25zCiAgICArIGdndGhlbWVzCiAgICArIGdnYW5pbWF0ZQogICAgKyBnZ2ZvcmNlCiAgICArIGdncmVwZWwKNy4gQnVpbGQgYSBjb21wbGV4IGNoYXJ0IHRvZ2V0aGVy</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2xhc3MgNiAtIExlY3R1cmUiCmF1dGhvcjogSGFyaSBTdWJoYXNoCmRhdGU6ICJEYXRlIGNyZWF0ZWQ6IGByIFN5cy5EYXRlKClgIgpvdXRwdXQ6CiAgaHRtbF9ub3RlYm9vazoKICAgIGhpZ2hsaWdodDoga2F0ZQogICAgc21hcnQ6IHllcwogICAgdGhlbWU6IGNvc21vCiAgICBjb2RlX2ZvbGRpbmc6IHNob3cKICAgIGRmX3ByaW50OiBwYWdlZApjc3M6IC9Vc2Vycy9oc3ViaGFzaC9Eb2N1bWVudHMvUjREL0Fzc2V0cy9jdXN0b20uY3NzCi0tLQoqKkxFQVJOSU5HIE9CSkVDVElWRSoqOiA6IFVzZSAqZ2dwbG90MiogYWxvbmcgd2l0aCBpdHMgKmV4dGVuc2lvbnMqIHRvIG1ha2UgY2hhcnRzIHRoYXQgYXJlICp3b3JrIHJlYWR5Ki4KCioqVE9QSUNTKioKCjEuIEhvdXNla2VlcGluZwogICAgKyBMZWFybmluZyBwbGFuIGZvciB0aGUgbmV4dCB0d28gd2Vla3MKICAgICsgVGhvdWdodHMgb24gYXNzaWdubWVudCBhbmQgZGFpbHkgdGFza3MKICAgICsgUG9zdGluZyBlcnJvcnMgYW5kIGlzc3VlcwoyLiBNYWtlIGJlYXV0aWZ1bCBjaGFydHMgdXNpbmcKICAgICsgQWVzdGhldGljcyAoYWxwaGEsIGNvbG91ciBldGMuKQogICAgKyBTY2FsZXMKICAgICsgVGhlbWUKICAgICsgTGFiZWxzIGFuZCBhbm5vdGF0aW9ucwozLiBTYXZlIGEgcGxvdAo0LiBEaXNjdXNzIGV4dGVuc2lvbnMgYW5kIGhlbHBlcnMKICAgICsgW2dndGhlbWVzXShodHRwczovL3l1dGFubmloaWxhdGlvbi5naXRodWIuaW8vYWxsWW91ckZpZ3VyZUFyZUJlbG9uZ1RvVXMvZ2d0aGVtZXMvKQogICAgKyBbZ2dhbmltYXRlXShodHRwczovL2dnYW5pbWF0ZS5jb20vKQogICAgKyBbZ2dmb3JjZV0oaHR0cHM6Ly93d3cuZGF0YS1pbWFnaW5pc3QuY29tLzIwMTkvdGhlLWdnZm9yY2UtYXdha2Vucy1hZ2Fpbi8pCiAgICArIFtnZ3JlcGVsXShodHRwczovL2dpdGh1Yi5jb20vc2xvd2tvdy9nZ3JlcGVsKQogICAgKyBbc2NhbGVzXShodHRwczovL3NjYWxlcy5yLWxpYi5vcmcvKQogICAgKyBbZGlyZWN0bGFiZWxzXShodHRwOi8vZGlyZWN0bGFiZWxzLnItZm9yZ2Uuci1wcm9qZWN0Lm9yZy8pCiAgICArIFtNYW55IG1vcmVdKGh0dHBzOi8vd3d3LmdncGxvdDItZXh0cy5vcmcvZ2FsbGVyeS8pCgo=</div>
 
 
 
