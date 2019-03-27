@@ -326,9 +326,9 @@ ggplot(data = plotData, mapping = aes(x = hour, y = meanDelay, colour = origin))
   )
 ```
 
-<iframe src="https://giphy.com/embed/Jf4FBs6JZhvKU" width="480" height="408" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/applause-yes-Jf4FBs6JZhvKU">via GIPHY</a></p>
+![**Even he is impressed!**](applause.gif)
 
-Now the chart is publication ready. The final part is to save it. We can do this using the `ggsave()` function. Plots can saved in the following formats: "eps", "ps", "tex" (pictex), "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf" (windows only). If you use a filename that includes the extension, the ggsave will automatically infer the preferred format and use that. If you don't use the extension you can explicitly set it using the "device" argument. By default, `ggsave()` saves the last plot that was created in your notebook or script.
+Now the chart is publication ready. The final part is to save it. We can do this using the `ggsave()` function. Plots can saved in the following formats: "eps", "ps", "tex" (pictex), "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf" (windows only). If you use a filename that includes the extension, the ggsave will automatically infer the preferred format and use that. If you don't use the extension you can explicitly set it using the "device" argument. By default, `ggsave()` saves the last plot that was created in your notebook or script. The file is saved in the folder where you notebook is stored.
 
 ```{r}
 ggsave(filename = "prettyLines.png", width = 7, height = 4)
@@ -339,43 +339,7 @@ ggsave(filename = "prettyLines.png", width = 7, height = 4)
 
 ##Optional tasks
 
-###Easy
-
-###Medium
-
-Apply ggthemes
-
-###Insane
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. Calculate the average monthly departure delay for each origin and use that data to recreate the same chart as above (the only difference is that you will be using month instead of hour for x aesthetic)
+2. Install the `ggthemes` package and load it using `library()`
+3. Apply the `theme_fivethirtyeight()` instead of `theme_minimal()`
+4. Harder task: `theme_fivethirtyeight()` removes the axis titles that we created. Can you use google to find an answer for how to bring this back?
