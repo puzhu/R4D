@@ -326,7 +326,7 @@ ggplot(data = plotData, mapping = aes(x = hour, y = meanDelay, colour = origin))
   )
 ```
 
-![](https://gph.is/145dlFp) 
+<iframe src="https://giphy.com/embed/Jf4FBs6JZhvKU" width="480" height="408" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/applause-yes-Jf4FBs6JZhvKU">via GIPHY</a></p>
 
 Now the chart is publication ready. The final part is to save it. We can do this using the `ggsave()` function. Plots can saved in the following formats: "eps", "ps", "tex" (pictex), "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf" (windows only). If you use a filename that includes the extension, the ggsave will automatically infer the preferred format and use that. If you don't use the extension you can explicitly set it using the "device" argument. By default, `ggsave()` saves the last plot that was created in your notebook or script.
 
