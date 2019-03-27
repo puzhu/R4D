@@ -27,6 +27,83 @@
 <script src="data:application/x-javascript;base64,CndpbmRvdy5pbml0aWFsaXplU291cmNlRW1iZWQgPSBmdW5jdGlvbihmaWxlbmFtZSkgewogICQoIiNybWQtZG93bmxvYWQtc291cmNlIikuY2xpY2soZnVuY3Rpb24oKSB7CiAgICB2YXIgc3JjID0gJCgiI3JtZC1zb3VyY2UtY29kZSIpLmh0bWwoKTsKICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpOwogICAgYS5ocmVmID0gImRhdGE6dGV4dC94LXItbWFya2Rvd247YmFzZTY0LCIgKyBzcmM7CiAgICBhLmRvd25sb2FkID0gZmlsZW5hbWU7CiAgICBkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpOwogICAgYS5jbGljaygpOwogICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChhKTsKICB9KTsKfTsK"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #1f1c1b; background-color: #ffffff; }
+code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code > span.dt { color: #0057ae; } /* DataType */
+code > span.dv { color: #b08000; } /* DecVal */
+code > span.bn { color: #b08000; } /* BaseN */
+code > span.fl { color: #b08000; } /* Float */
+code > span.cn { color: #aa5500; } /* Constant */
+code > span.ch { color: #924c9d; } /* Char */
+code > span.sc { color: #3daee9; } /* SpecialChar */
+code > span.st { color: #bf0303; } /* String */
+code > span.vs { color: #bf0303; } /* VerbatimString */
+code > span.ss { color: #ff5500; } /* SpecialString */
+code > span.im { color: #ff5500; } /* Import */
+code > span.co { color: #898887; } /* Comment */
+code > span.do { color: #607880; } /* Documentation */
+code > span.an { color: #ca60ca; } /* Annotation */
+code > span.cv { color: #0095ff; } /* CommentVar */
+code > span.ot { color: #006e28; } /* Other */
+code > span.fu { color: #644a9b; } /* Function */
+code > span.va { color: #0057ae; } /* Variable */
+code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #1f1c1b; } /* Operator */
+code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code > span.pp { color: #006e28; } /* Preprocessor */
+code > span.at { color: #0057ae; } /* Attribute */
+code > span.re { color: #0057ae; } /* RegionMarker */
+code > span.in { color: #b08000; } /* Information */
+code > span.wa { color: #bf0303; } /* Warning */
+code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
+code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code > span. { color: #1f1c1b; } /* Normal */
+
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -225,7 +302,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Class 6 - Lecture</h1>
 <h4 class="author">Hari Subhash</h4>
-<h4 class="date">Date created: 2019-03-26</h4>
+<h4 class="date">Date created: 2019-03-27</h4>
 
 </div>
 
@@ -234,12 +311,12 @@ $(document).ready(function () {
 <p><strong>LEARNING OBJECTIVE</strong>: : Use <em>ggplot2</em> along with its <em>extensions</em> to make charts that are <em>work ready</em>.</p>
 <p><strong>TOPICS</strong></p>
 <ol style="list-style-type: decimal">
-<li>Housekeeping
+<li><del>Housekeeping</del>
 <ul>
-<li>Learning plan for the next two weeks</li>
-<li>Thoughts on assignment and daily tasks</li>
-<li>Posting errors and issues</li>
-<li>Taking notes in class</li>
+<li><del>Learning plan for the next two weeks</del></li>
+<li><del>Thoughts on assignment and daily tasks</del></li>
+<li><del>Posting errors and issues</del></li>
+<li><del>Taking notes in class</del></li>
 </ul></li>
 <li>Make beautiful charts using
 <ul>
@@ -260,9 +337,22 @@ $(document).ready(function () {
 <li><a href="https://www.ggplot2-exts.org/gallery/">Many more</a></li>
 </ul></li>
 </ol>
+<div id="recap-on-ggplot" class="section level2">
+<h2>Recap on ggplot</h2>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2dzYXZlKGZpbGVuYW1lID0gXCJ0ZXN0UGxvdC5wbmdcIilcblxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="dt">filename =</span> <span class="st">&quot;testPlot.png&quot;</span>)</code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU2F2aW5nIDcgeCA3IGluIGltYWdlXG4ifQ== -->
+<pre><code>Saving 7 x 7 in image</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2xhc3MgNiAtIExlY3R1cmUiCmF1dGhvcjogSGFyaSBTdWJoYXNoCmRhdGU6ICJEYXRlIGNyZWF0ZWQ6IGByIFN5cy5EYXRlKClgIgpvdXRwdXQ6CiAgaHRtbF9ub3RlYm9vazoKICAgIGhpZ2hsaWdodDoga2F0ZQogICAgc21hcnQ6IHllcwogICAgdGhlbWU6IGNvc21vCiAgICBjb2RlX2ZvbGRpbmc6IHNob3cKICAgIGRmX3ByaW50OiBwYWdlZApjc3M6IC9Vc2Vycy9oc3ViaGFzaC9Eb2N1bWVudHMvUjREL0Fzc2V0cy9jdXN0b20uY3NzCi0tLQoqKkxFQVJOSU5HIE9CSkVDVElWRSoqOiA6IFVzZSAqZ2dwbG90MiogYWxvbmcgd2l0aCBpdHMgKmV4dGVuc2lvbnMqIHRvIG1ha2UgY2hhcnRzIHRoYXQgYXJlICp3b3JrIHJlYWR5Ki4KCioqVE9QSUNTKioKCjEuIEhvdXNla2VlcGluZwogICAgKyBMZWFybmluZyBwbGFuIGZvciB0aGUgbmV4dCB0d28gd2Vla3MKICAgICsgVGhvdWdodHMgb24gYXNzaWdubWVudCBhbmQgZGFpbHkgdGFza3MKICAgICsgUG9zdGluZyBlcnJvcnMgYW5kIGlzc3VlcwogICAgKyBUYWtpbmcgbm90ZXMgaW4gY2xhc3MKMi4gTWFrZSBiZWF1dGlmdWwgY2hhcnRzIHVzaW5nCiAgICArIEFlc3RoZXRpY3MgKGFscGhhLCBjb2xvdXIgZXRjLikKICAgICsgU2NhbGVzCiAgICArIFRoZW1lCiAgICArIExhYmVscyBhbmQgYW5ub3RhdGlvbnMKMy4gU2F2ZSBhIHBsb3QKNC4gRGlzY3VzcyBleHRlbnNpb25zIGFuZCBoZWxwZXJzCiAgICArIFtnZ3RoZW1lc10oaHR0cHM6Ly95dXRhbm5paGlsYXRpb24uZ2l0aHViLmlvL2FsbFlvdXJGaWd1cmVBcmVCZWxvbmdUb1VzL2dndGhlbWVzLykKICAgICsgW2dnYW5pbWF0ZV0oaHR0cHM6Ly9nZ2FuaW1hdGUuY29tLykKICAgICsgW2dnZm9yY2VdKGh0dHBzOi8vd3d3LmRhdGEtaW1hZ2luaXN0LmNvbS8yMDE5L3RoZS1nZ2ZvcmNlLWF3YWtlbnMtYWdhaW4vKQogICAgKyBbZ2dyZXBlbF0oaHR0cHM6Ly9naXRodWIuY29tL3Nsb3drb3cvZ2dyZXBlbCkKICAgICsgW3NjYWxlc10oaHR0cHM6Ly9zY2FsZXMuci1saWIub3JnLykKICAgICsgW2RpcmVjdGxhYmVsc10oaHR0cDovL2RpcmVjdGxhYmVscy5yLWZvcmdlLnItcHJvamVjdC5vcmcvKQogICAgKyBbTWFueSBtb3JlXShodHRwczovL3d3dy5nZ3Bsb3QyLWV4dHMub3JnL2dhbGxlcnkvKQoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2xhc3MgNiAtIExlY3R1cmUiCmF1dGhvcjogSGFyaSBTdWJoYXNoCmRhdGU6ICJEYXRlIGNyZWF0ZWQ6IGByIFN5cy5EYXRlKClgIgpvdXRwdXQ6CiAgaHRtbF9ub3RlYm9vazoKICAgIGhpZ2hsaWdodDoga2F0ZQogICAgc21hcnQ6IHllcwogICAgdGhlbWU6IGNvc21vCiAgICBjb2RlX2ZvbGRpbmc6IHNob3cKICAgIGRmX3ByaW50OiBwYWdlZApjc3M6IC9Vc2Vycy9oc3ViaGFzaC9Eb2N1bWVudHMvUjREL0Fzc2V0cy9jdXN0b20uY3NzCi0tLQoqKkxFQVJOSU5HIE9CSkVDVElWRSoqOiA6IFVzZSAqZ2dwbG90MiogYWxvbmcgd2l0aCBpdHMgKmV4dGVuc2lvbnMqIHRvIG1ha2UgY2hhcnRzIHRoYXQgYXJlICp3b3JrIHJlYWR5Ki4KCioqVE9QSUNTKioKCjEuIH5+SG91c2VrZWVwaW5nfn4KICAgICsgfn5MZWFybmluZyBwbGFuIGZvciB0aGUgbmV4dCB0d28gd2Vla3N+fgogICAgKyB+flRob3VnaHRzIG9uIGFzc2lnbm1lbnQgYW5kIGRhaWx5IHRhc2tzfn4KICAgICsgfn5Qb3N0aW5nIGVycm9ycyBhbmQgaXNzdWVzfn4KICAgICsgfn5UYWtpbmcgbm90ZXMgaW4gY2xhc3N+fgoyLiBNYWtlIGJlYXV0aWZ1bCBjaGFydHMgdXNpbmcKICAgICsgQWVzdGhldGljcyAoYWxwaGEsIGNvbG91ciBldGMuKQogICAgKyBTY2FsZXMKICAgICsgVGhlbWUKICAgICsgTGFiZWxzIGFuZCBhbm5vdGF0aW9ucwozLiBTYXZlIGEgcGxvdAo0LiBEaXNjdXNzIGV4dGVuc2lvbnMgYW5kIGhlbHBlcnMKICAgICsgW2dndGhlbWVzXShodHRwczovL3l1dGFubmloaWxhdGlvbi5naXRodWIuaW8vYWxsWW91ckZpZ3VyZUFyZUJlbG9uZ1RvVXMvZ2d0aGVtZXMvKQogICAgKyBbZ2dhbmltYXRlXShodHRwczovL2dnYW5pbWF0ZS5jb20vKQogICAgKyBbZ2dmb3JjZV0oaHR0cHM6Ly93d3cuZGF0YS1pbWFnaW5pc3QuY29tLzIwMTkvdGhlLWdnZm9yY2UtYXdha2Vucy1hZ2Fpbi8pCiAgICArIFtnZ3JlcGVsXShodHRwczovL2dpdGh1Yi5jb20vc2xvd2tvdy9nZ3JlcGVsKQogICAgKyBbc2NhbGVzXShodHRwczovL3NjYWxlcy5yLWxpYi5vcmcvKQogICAgKyBbZGlyZWN0bGFiZWxzXShodHRwOi8vZGlyZWN0bGFiZWxzLnItZm9yZ2Uuci1wcm9qZWN0Lm9yZy8pCiAgICArIFtNYW55IG1vcmVdKGh0dHBzOi8vd3d3LmdncGxvdDItZXh0cy5vcmcvZ2FsbGVyeS8pCgoKIyNSZWNhcCBvbiBnZ3Bsb3QKCmBgYHtyfQpsaWJyYXJ5KHRpZHl2ZXJzZSk7IGxpYnJhcnkobnljZmxpZ2h0czEzKTsgbGlicmFyeShnYXBtaW5kZXIpOyBsaWJyYXJ5KGdndGhlbWVzKQoKZmxpZ2h0cyAlPiUgCiAgICBncm91cF9ieShob3VyLCBvcmlnaW4pICU+JSAKICAgIHN1bW1hcmlzZShtZWFuRGVsYXkgPSBtZWFuKGRlcF9kZWxheSwgbmEucm0gPSBUKSkgJT4lIAogICAgdW5ncm91cCgpICU+JSAKICAgIGdncGxvdChhZXMoeCA9IGhvdXIsIHkgPSBtZWFuRGVsYXksIGNvbG91ciA9IG9yaWdpbikpICsKICAgIGdlb21fbGluZSgpICsKICAgIGdlb21fcG9pbnQoKSArCiAgICBsYWJzKHggPSAiSG91ciB0aGUgZmxpZ2h0IHRvb2sgb2ZmIiwKICAgICAgICAgeSA9ICJNZWFuIERlcGFydHVyZSBkZWxheSBmb3IgdGhhdCBob3VyIiwKICAgICAgICAgdGl0bGUgPSAiRGVwYXJ0dXJlIGRlbGF5IGlzIGdyZWF0ZXN0IGluIHRoZSBldmVuaW5ncyIpICsKICAgIHRoZW1lX2J3KCkgKwogICAgdGhlbWUoCiAgICAgICAgbGVnZW5kLnBvc2l0aW9uID0gIm5vbmUiLAogICAgICAgIGF4aXMudGl0bGUgPSBlbGVtZW50X3RleHQoc2l6ZSA9IDM0KQogICAgKQogICAgCgpnZ3NhdmUoZmlsZW5hbWUgPSAidGVzdFBsb3QucG5nIikKCmBgYAoKICAgIAoKCg==</div>
 
 
 

@@ -15,11 +15,11 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 
 **TOPICS**
 
-1. Housekeeping
-    + Learning plan for the next two weeks
-    + Thoughts on assignment and daily tasks
-    + Posting errors and issues
-    + Taking notes in class
+1. ~~Housekeeping~~
+    + ~~Learning plan for the next two weeks~~
+    + ~~Thoughts on assignment and daily tasks~~
+    + ~~Posting errors and issues~~
+    + ~~Taking notes in class~~
 2. Make beautiful charts using
     + Aesthetics (alpha, colour etc.)
     + Scales
@@ -34,4 +34,34 @@ css: /Users/hsubhash/Documents/R4D/Assets/custom.css
     + [scales](https://scales.r-lib.org/)
     + [directlabels](http://directlabels.r-forge.r-project.org/)
     + [Many more](https://www.ggplot2-exts.org/gallery/)
+
+
+##Recap on ggplot
+
+```{r}
+library(tidyverse); library(nycflights13); library(gapminder); library(ggthemes)
+
+flights %>% 
+    group_by(hour, origin) %>% 
+    summarise(meanDelay = mean(dep_delay, na.rm = T)) %>% 
+    ungroup() %>% 
+    ggplot(aes(x = hour, y = meanDelay, colour = origin)) +
+    geom_line() +
+    geom_point() +
+    labs(x = "Hour the flight took off",
+         y = "Mean Departure delay for that hour",
+         title = "Departure delay is greatest in the evenings") +
+    theme_bw() +
+    theme(
+        legend.position = "none",
+        axis.title = element_text(size = 34)
+    )
+    
+
+ggsave(filename = "testPlot.png")
+
+```
+
+    
+
 

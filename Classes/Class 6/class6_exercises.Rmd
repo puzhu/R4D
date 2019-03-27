@@ -22,13 +22,75 @@ output:
 6. Use `str()` to see the structure of the gapminder dataset.
 7. Use `glimpse()` to see the structure of the gapminder dataset.
 8. Use `names()` to print the names of the columns in the gapminder dataset
-9. Draw a histogram of the `gdpPerCap` variable in the gapminder dataset. 
-10. Draw a histogram of the `gdpPerCap` but this time add a binwidth argument to the histogram. Use a value of your choice.
+9. Draw a histogram of the `gdpPercap` variable in the gapminder dataset.
+
+```{r}
+names(gapminder)
+```
+
+```{r}
+library(tidyverse); library(gapminder)
+
+ggplot(data = gapminder, mapping = aes(gdpPercap)) +
+    geom_histogram()
+```
+
+
+10. Draw a histogram of the `gdpPercap` but this time add a binwidth argument to the histogram. Use a value of your choice.
+```{r}
+ggplot(data = gapminder, mapping = aes(gdpPercap)) +
+    geom_histogram(binwidth = 1000)
+
+ggsave("allYears.png")
+```
+
+
 11. Filter the gapminder dataset to show only the latest year for each country. (Hint: you will need to group the data and filter for the most recent year using year == `max(year, na.rm = T)`, figure out the variable you should group by.)
+
+This is a slightly more elaborate way to write this.
+```{r}
+gapminder %>% 
+    group_by(country) %>% 
+    mutate(minYear = min(year, na.rm = T)) %>% 
+    filter(year == minYear)
+```
+
+The better way to write this.
+
+```{r}
+gapminder %>% 
+    group_by(country) %>% 
+    filter(year == max(year, na.rm = T))
+```
+
 12. Do the same steps as in 11 but this time pipe to a ggplot function that plots a histogram.
+```{r}
+gapminder %>% 
+    group_by(country) %>% 
+    filter(year == max(year, na.rm = T)) %>% 
+    ggplot(aes(gdpPercap)) +
+    geom_histogram(binwidth = 1000)
+
+ggsave("mostRecentYear.png")
+```
+
 13. Observe the differences in the histogram from 12 and 10.
 14. Find the average population every year and show that on a column chart
+```{r}
+gapminder %>% 
+    group_by(year) %>% 
+    summarise(meanPop = mean(pop, na.rm = T))
+```
+
 15. Find the average population every year and show that on a line chart
+```{r}
+gapminder %>% 
+    group_by(year) %>% 
+    summarise(meanPop = mean(pop, na.rm = T)) %>% 
+    ggplot(aes(x = year, y = meanPop)) +
+    geom_line()
+```
+
 16. Draw a scatter plot showing the relationship between population and gddPercap for latest year for every country (same process as 11)
 17. The previous scatter looks weird. You can improve this by plotting the log(pop) against the log(gdpPercap). Try doing this. A Log transformation is useful to highlight underlying patterns in highly skewed data (long tails). 
 18. Draw a boxplot showing the spread of gdpPercap for each year since 2000 (so x is year and y is gdpPercap). Make sure to wrap your year variable in `factor()` or a `as.character()` so that it is not treated as a continous variable.
@@ -50,16 +112,6 @@ output:
 **Time**: 30 minutes
 
 1. Create a multiline chart showing the gdpPercap trends over the years for different continents.  Each continent should have a line that is a different colour from the others. Make it pretty.
-
-```{r}
-gapminder %>% 
-    group_by(continent, year) %>% 
-    summarise(meanGDP = mean(gdpPercap, na.rm = T)) %>% 
-    ggplot(aes(x = year, y = meanGDP, colour = continent)) +
-    geom_line() +
-    directlabels::geom_dl(aes(label = continent), method = "last.bumpup")
-```
-
 2. Install the directlabels package.
 3. Use the `geom_dl()` function from this package to attach labels showing the names of the continents right next to the line. Make sure the labels have the same colour as the lines and that they are visible. Remove the legend using the `theme()` function. Check out different positioning methods here: http://directlabels.r-forge.r-project.org/docs/index.html
 4. Install the cowplots package.
