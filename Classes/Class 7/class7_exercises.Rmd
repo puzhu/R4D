@@ -70,9 +70,10 @@ flights %>%
     theme_minimal()
 ```
 
-2. Pick any chart from Task Set 1 and make it prettier.
-3. Save this plot using `ggsave()` as a png and share it on the class channel.
-4. **Hard**: Create a similar chart as step 1, however, instead of using continents to create the multiple lines, create a new variable called `incomeGroup` that categorizes countries into 5 groups based on the average `gdpPercap` over the entire set of years. Use this variable to create a multi-line chart. Make this chart pretty. Hint: First you will need to calculate (within a `mutate()`) the mean `gdpPercap` for each country and then use that to create the categories (see `?cut_number`).
+2. Install the ggthemes package and load it using `library()`
+3. Replace `theme_minimal()` from the previous chart with a theme from the `ggthemes` package. See this [link](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) to pick a theme you like.
+4. Save this plot using `ggsave()` as a png and share it on the class channel.
+5. **Hard**: Create a similar chart as step 1, however, instead of using continents to create the multiple lines, create a new variable called `incomeGroup` that categorizes countries into 5 groups based on the average `gdpPercap` over the entire set of years. Use this variable to create a multi-line chart. Make this chart pretty. Hint: First you will need to calculate (within a `mutate()`) the mean `gdpPercap` for each country and then use that to create the categories (see `?cut_number`).
 
 ##Task Set 3: Extra time
 **Time**: 30 minutes
