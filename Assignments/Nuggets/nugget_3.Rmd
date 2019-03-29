@@ -29,7 +29,7 @@ output:
 2. You can complete these as daily tasks or in bulk. Each task set should take you about 30 to 45 minutes to complete. You will be using the nycflights13 and tidyverse packages for these tasks.
 3. Provide the answers to each question under it. 
 
-**DEADLINE**: Wed 27th, 2019
+**DEADLINE**: Tue April 2nd, 2019, 6:00 PM EST
 
 ##Day 1
 1. Get the structure of the flights data set using the `str()` command.

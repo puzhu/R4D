@@ -156,19 +156,202 @@ flights %>%
         ) +
     theme_minimal()
 ```
+```{r}
+gapminder %>% 
+    arrange(continent, year)
+```
+
+
+```{r}
+gapminder %>%
+    group_by(continent, year) %>%
+    summarise(meanGdpPercap = mean(gdpPercap, na.rm = T),
+              meanPop = mean(pop, na.rm = T)) %>%
+    ungroup()
+```
 
 2. Install the ggthemes package and load it using `library()`
 3. Replace `theme_minimal()` from the previous chart with a theme from the `ggthemes` package. See this [link](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) to pick a theme you like.
 4. Save this plot using `ggsave()` as a png and share it on the class channel.
-5. **Hard**: Create a similar chart as step 1, however, instead of using continents to create the multiple lines, create a new variable called `incomeGroup` that categorizes countries into 5 groups based on the average `gdpPercap` over the entire set of years. Use this variable to create a multi-line chart. Make this chart pretty. Hint: First you will need to calculate (within a `mutate()`) the mean `gdpPercap` for each country and then use that to create the categories (see `?cut_number`).
+5. **Legendary**: Create a similar chart as step 1, however, instead of using continents to create the multiple lines, create a new variable called `incomeGroup` that categorizes countries into 5 groups based on the average `gdpPercap` over the entire set of years. Use this variable to create a multi-line chart. Make this chart pretty. Hint: First you will need to calculate (within a `mutate()`) the mean `gdpPercap` for each country and then use that to create the categories (see `?cut_number`).
+
+```{r}
+gapminder %>% 
+    group_by(country) %>% 
+    mutate(meanCountryGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ungroup() %>% 
+    mutate(incomeGroup = cut_number(meanCountryGDP, n = 5)) %>% 
+    group_by(incomeGroup, year) %>% 
+    summarise(meanGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ggplot(aes(x = year, y = meanGDP, colour = incomeGroup)) +
+    geom_line()
+    
+```
 
 ##Task Set 3: Extra time
 **Time**: 30 minutes
 
 1. If you haven't done so already, try creating the last chart from the previous task set.
+```{r}
+gapminder %>% 
+    group_by(country) %>% 
+    mutate(meanCountryGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ungroup() %>% 
+    mutate(incomeGroup = cut_number(meanCountryGDP, n = 5)) %>% 
+    group_by(incomeGroup, year) %>% 
+    summarise(meanGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ggplot(aes(x = year, y = meanGDP, colour = incomeGroup)) +
+    geom_line()
+```
+
 2. Update this chart by converting the `incomeGroup` to a factor variable (You will have to do to this in the data before you feed it to the chart) with appropriate labels.
+
+Lets look at the data used for this plot to get a better sense of the `incomeGroup` variable. For this lets save the data.
+```{r}
+gapPlotData <- gapminder %>% 
+    group_by(country) %>% 
+    mutate(meanCountryGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ungroup() %>% 
+    mutate(incomeGroup = cut_number(meanCountryGDP, n = 5)) %>% 
+    group_by(incomeGroup, year) %>% 
+    summarise(meanGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ungroup()
+
+str(gapPlotData)
+```
+
+The output from the `str()` command tells us that the `incomeGroup` is a factor variable. This is because the `cut_*` functions are used to create factor variables. In our case we have used `cut_number()` to cut the average `gdpPercap` for each country over the panel into bins, each with an equal number of observations. Lets take a look at the levels (the order) of this factor variable.
+
+```{r}
+levels(gapPlotData$incomeGroup)
+```
+The output above tells us that the income groups are ordered from the lowest bin to the highest. Lets use the `fct_recode()` function from the forcats package that is loaded along with the the `tidyverse` to changes the labels for this factor variable.
+```{r}
+gapPlotData <- gapPlotData %>% 
+    mutate(incomeGroup = fct_recode(incomeGroup,
+                                    "Low income" = "[439,1.14e+03]",
+                                    "Low middle income" = "(1.14e+03,2.84e+03]",
+                                    "Middle income" = "(2.84e+03,5.83e+03]",
+                                    "High middle income" = "(5.83e+03,1.39e+04]",
+                                    "High income" = "(1.39e+04,6.53e+04]"))
+```
+
+Lets now create the same plot as before with this new data.
+```{r}
+ggplot(data = gapPlotData, mapping = aes(x = year, y = meanGDP, colour = incomeGroup)) +
+    geom_line()
+```
+
 3. Apply these new factor labels as direct labels on the line using `geom_label()` and remove the legend from the plot (see class prep).
+
+We only want the labels to be plotted for the last year in this data. This means that we should feed the `geom_label()` just the last year of data. Lets try that out.
+```{r}
+ggplot(data = gapPlotData, mapping = aes(x = year, y = meanGDP, colour = incomeGroup)) +
+    geom_line() +
+    geom_label(data = gapPlotData %>% 
+                   filter(year == max(year, na.rm = T)), 
+               aes(label = incomeGroup))
+```
+This looks good but it can be improved. Lets nudge the labels on the x-axis and make them a bit more transparent so that they are not truncated by the plot margins and don't completely hide the lines. Lets also remove the legend. I have also added a minimal theme.
+
+```{r}
+ggplot(data = gapPlotData, mapping = aes(x = year, y = meanGDP, colour = incomeGroup)) +
+    geom_line() +
+    geom_text(data = gapPlotData %>% 
+                   filter(year == max(year, na.rm = T)), 
+               aes(label = incomeGroup),
+               alpha = 0.8,
+               nudge_x = -4.5,
+               nudge_y = 1000) +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    )
+```
+
 4. Install the cowplots package.
+I have it installed already. Lets load it.
+```{r}
+library(cowplot)
+```
+
 5. Create the same plot as above but this time save it to a variable. Create the exact same plot but for instead of showing the average `gdpPercap` show `pop`. Use `plot_grid()` from the cowplots package to show these two plots next to each other. Make sure to add the appropriate titles to each chart.
 
+First lets add a title to the last plot and save it
+```{r}
+gdpPlot <- ggplot(data = gapPlotData, mapping = aes(x = year, y = meanGDP, colour = incomeGroup)) +
+    geom_line() +
+    geom_text(data = gapPlotData %>% 
+                   filter(year == max(year, na.rm = T)), 
+               aes(label = incomeGroup),
+               alpha = 0.8,
+               nudge_x = -4.5,
+               nudge_y = 1000) +
+    labs(
+        title = "Convergence where art thou?",
+        x = "Year",
+        y = "Mean GDP per cap (in current USD)"
+    ) +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    )
+
+gdpPlot
+```
+
+Now lets replicate the same plot for pop. For this I need to recreate the data and instead of calculating the average gdpPercap I need to calculate the average population.
+
+```{r}
+popPlotData <- gapminder %>% 
+    group_by(country) %>% 
+    mutate(meanCountryGDP = mean(gdpPercap, na.rm = T)) %>% 
+    ungroup() %>% 
+    mutate(incomeGroup = cut_number(meanCountryGDP, n = 5)) %>% 
+    group_by(incomeGroup, year) %>% 
+    summarise(meanPop = mean(pop, na.rm = T)) %>% 
+    ungroup() %>% 
+    mutate(incomeGroup = fct_recode(incomeGroup,
+                                    "Low income" = "[439,1.14e+03]",
+                                    "Low middle income" = "(1.14e+03,2.84e+03]",
+                                    "Middle income" = "(2.84e+03,5.83e+03]",
+                                    "High middle income" = "(5.83e+03,1.39e+04]",
+                                    "High income" = "(1.39e+04,6.53e+04]"))
+```
+
+
+Now lets create the population plot.
+
+
+```{r}
+popPlot <- ggplot(data = popPlotData, mapping = aes(x = year, y = meanPop, colour = incomeGroup)) +
+    geom_line() +
+    geom_text(data = popPlotData %>% 
+                   filter(year == max(year, na.rm = T)), 
+               aes(label = incomeGroup),
+               alpha = 0.8,
+               nudge_x = -4.5,
+               nudge_y = 1e6) +
+    labs(
+        title = "Or do we need birth control?",
+        x = "Year",
+        y = "Mean Population"
+    ) +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    )
+popPlot
+```
+
+Lets now use `plot_grid()` to combine the two.
+
+```{r, fig.width=12}
+plot_grid(gdpPlot, popPlot)
+ggsave("cowplot.png")
+```
+
+```{r}
+
+```
 
