@@ -67,4 +67,12 @@ output:
 ##Day 5
 1. Look at the documentation of `facet_grid()` and create a histogram for each combination of origin and carrier.
 
-MORE TO COME
+##Day 6
+1. Pick any chart you have made so far and make it publication ready
+    + Add labels and titles
+    + Add the following subtitle to it: "A chart I made for the daily tasks"
+    + Try out a new theme from the ggthemes package
+2. Save this chart and share it on #general channel on slack
+3. Preview this notebook and push your changes to github. Share the link with me (personally on Slack) before 6:00 PM EST, Tuesday, April 2nd
+
+

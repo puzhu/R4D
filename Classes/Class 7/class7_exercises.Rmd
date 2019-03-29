@@ -38,15 +38,102 @@ gapminder %>%
 
 2. The previous scatter looks weird because there are a few population values that are really big that elongate the x-axis while most of the variation in the data happens on the left-side of this axis. The same things is happening on the y-axis. We can compress this chart by taking logs. A Log transformation is useful to highlight underlying patterns in highly skewed data (long tails). Set the x aesthetic as `log(pop)` instead of `pop` and `log(gdpPercap)` instead of `gdpPercap` for the y-aesthetic. Like so `mapping = aes(x = log(pop), y = log(gdpPercap))`.
 
-3. Now that we have a scatter plot that highlights the relationship between the two variables lets adding a line that characterizes this relationship. You can do this by adding `geom_smooth(method = "lm")` to your code. Bonus task: Change the colour of the confidence bands around the line to red and set its opacity (using alpha aesthetic) to 1.
+3. Now that we have a scatter plot that highlights the relationship between the two variables lets adding a line that characterizes this relationship. You can do this by adding `geom_smooth(method = "lm")` to your code. Bonus task: Change the colour of the confidence bands around the line to red and set its opacity (using alpha aesthetic) to 0.1.
 
 4. Now lets map an additional aesthetic. Inside the aesthetic mapping in the `ggplot()` function, set the colour of the dots to the continent.
+```{r}
+library(tidyverse); library(gapminder)
+
+gapminder %>% 
+    group_by(country) %>% 
+    filter(year == max(year, na.rm = T)) %>% 
+    ungroup() %>% 
+    ggplot(data = ., mapping = aes(x = log(pop), y = log(gdpPercap), colour = continent)) +
+    geom_point() +
+    geom_smooth(method = "lm")
+```
+
+
 
 5. Finally let's also facet this plot by the continent. Use `facet_wrap(~continent, nrow = 1)` to facet this plot by `continent`
 
+```{r}
+gapminder %>% 
+    group_by(country) %>% 
+    filter(year == max(year, na.rm = T)) %>% 
+    ungroup() %>% 
+    ggplot(data = ., mapping = aes(x = log(pop), y = log(gdpPercap), colour = continent)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    facet_wrap(~continent, nrow = 1) +
+    theme(
+        legend.position = "none"
+    )
+```
+
+you can also set the scales to be independent. Like so
+
+```{r}
+gapminder %>% 
+    group_by(country) %>% 
+    filter(year == max(year, na.rm = T)) %>% 
+    ungroup() %>% 
+    ggplot(data = ., mapping = aes(x = log(pop), y = log(gdpPercap), colour = continent)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    facet_wrap(~continent, nrow = 1, scales = "free") +
+    theme(
+        legend.position = "none"
+    )
+```
+
+
 6. **Hard**: Extend the chart above by adding labels using `geom_label()` indicating the names of the countries that have gdpPercap above 35000 USD. Hint: You will need to save the data separately and set it within different geoms differently.
 
+```{r}
+plotData <- gapminder %>% 
+    group_by(country) %>% 
+    filter(year == max(year, na.rm = T)) %>% 
+    ungroup()
+
+ggplot(data = plotData, mapping = aes(x = log(pop), y = log(gdpPercap), colour = continent)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    geom_label(data = plotData %>% 
+                   filter(gdpPercap > 35000),
+               aes(label = country)) +
+    facet_wrap(~continent, nrow = 1) +
+    theme(legend.position = "none")
+```
+
+
 7. **Legendary**: Look up the `ggrepel` package and use `geom_label_repel()` from it instead of the `geom_label()`.
+Notice that I have transformed the scales here instead of the x and y aesthetic. Watch the video for more infor.
+```{r}
+ggplot(data = plotData, mapping = aes(x = pop, y = gdpPercap, colour = continent)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    ggrepel::geom_label_repel(data = plotData %>% 
+                   filter(gdpPercap > 35000),
+               aes(label = country)) +
+    scale_x_log10() +
+    scale_y_log10() +
+    facet_wrap(~continent, nrow = 1) +
+    theme(legend.position = "none")
+    
+```
+
+```{r}
+ggplot(data = plotData, mapping = aes(x = log(pop), y = log(gdpPercap), colour = continent)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    ggrepel::geom_label_repel(data = plotData %>% 
+                   filter(gdpPercap > 35000),
+               aes(label = country),
+               alpha = 0.5) +
+    facet_wrap(~continent, nrow = 1) +
+    theme(legend.position = "none")
+```
 
 
 ##Task Set 2: Make an aesthetically appealing chart
