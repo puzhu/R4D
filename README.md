@@ -16,7 +16,7 @@ This repository contains all the material for the R4D course - March 2019
 
 ## Assignment 1
 
-**[ASSIGNMENT 1](https://puzhu.github.io/R4D/Assignments/Assignment%201/Assignment1.nb.html)**
+**[Questions](https://puzhu.github.io/R4D/Assignments/Assignment%201/Assignment1.nb.html)** | **[Solution](https://puzhu.github.io/R4D/Assignments/Assignment%201/assignment1_solution.nb.html)**
 
 1. Bobby - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Bobby_Assignment1.nb.html) | [Assessment]()
 2. Fahima - [Submission](https://puzhu.github.io/R4D/Assignments/Assignment%201/Submissions/Submission_Fahima_Assignment1.nb.html) | [Assessment]()
