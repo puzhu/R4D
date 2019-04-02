@@ -11,7 +11,7 @@ output:
     df_print: paged
 css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 ---
-**LEARNING OBJECTIVE**: Relearn grouping
+**LEARNING OBJECTIVE**: Revise content that we have covered so far.
 
 **Topics to cover**
 
