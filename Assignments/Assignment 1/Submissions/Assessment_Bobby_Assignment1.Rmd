@@ -18,13 +18,18 @@ The section below provides overall feedback on the notebook. Specific comments a
 
 1. Was the assignement submitted on time? 
     + **YES!** Good job Bobby!
+    
 2. Was it posted as an online link? 
     + **YES!** [Submission Link](https://bobbymammen.github.io/BobbyR4d/Assignments/Assignment1.nb.html)
+    
 3. Does the code follow [recommended style conventions](http://adv-r.had.co.nz/Style.html)? 
     + **Mixed.** The indentation of code seems to be an issue when using pipes. Try using snakecase instead of camelCase while naming variables i.e. don't pick up my habits.
+    
 4. Does the notebook compile completely?
     + **NO.** Line 136 of the notebook returns an error. In general, comment out the code using `#` when it returns an error. You should be able to run all the code in a notebook using the `Run All` option in the `Run` dropdown menu.
+    
 5. Overall effectiveness of the markdown content?
+
 6. Overall effectiveness of the code?
 
 
@@ -59,7 +64,6 @@ typeof(dblVec)
 
 3. List the heirarchy of data types for coercion
     + Answer:logical < integer < numeric < character
-    + **Feedback from Hari**: Correct!
 
 4. Explain why the output of following bits of code is TRUE (explain what is happening in terms of coercion): 
 
@@ -112,7 +116,6 @@ Lets test to make sure the data frame I created is the same as yours using the `
 ```{r}
 identical(globalSales, globalSalesHari)
 ```
-
 
 5. Create the same data frame as above using `tibble()` function
 
@@ -179,13 +182,7 @@ flights %>%
 one_of(,year, month, day, dep_time, sched_dep_time, dep_delay, arr_time)
 ```
 
-**Feedback from Hari**: This was a slightly difficult question. See the documentation for `one_of` (`?one_of`). `one_of()` takes as its input a character vector of names. You have provided it a list of object names. The correct solution is below. 
-
-```{r}
-flights %>% 
-    select(one_of(c("year", "month", "day", "dep_time", "sched_dep_time", "dep_delay", "arr_time")))
-    
-```
+**Feedback from Hari**: This was a slightly difficult question. See the documentation for `one_of` (`?one_of`). `one_of()` takes as its input a character vector of names. You have provided it a list of object names. See solutions.
 
 
 5. Use the `slice()` function to slice the first 10 rows in the flights data.
@@ -205,6 +202,8 @@ flights %>%
 filter(newFlights, 1:10,.preserve=FALSE)
 
 ```
+**Feedback from Hari**: See solution
+
 
 7. Use the `top_n()` command to identify the top 5 flights out of NYC that experienced the greatest arrival delays in 2013.
 
@@ -214,6 +213,9 @@ flights %>%
   arrange(desc(dep_delay)) %>% 
 top_n(5)
 ```
+**Feedback from Hari**: There are several errors in this code. See assignment solution for correct version of this code. When you set `group_by(origin = "NYC")` it mutates the origin column and changes all of the values, which were previously JFK, EWR and LGA to "NYC" and groups on just a single value of "NYC". This means that your grouping yields a single group i.e. "NYC". In general, don't mutate values within a `group_by()` since it can yield silent failures like this. And is arguable bad function design (on Hadley Wickham's part). 
+
+Finally, grouping is unnecessary to solve this problem. See solution.
 
 8. Use `top_n()` along with `arrange()` and `slice()` to pull out the 50th most delayed departure from NYC in 2013 (Not all 50, just the 50th). 
 ```{r}
@@ -224,6 +226,7 @@ flights %>%
 top_n(-1)
 
 ```
+See solution.
 
 9. Do the same thing as the previous task using 
     + `row_number()`
@@ -252,6 +255,8 @@ flights %>%
 
 ```
 
+See solutions.
+
 12. Use `group_by()` with `mutate()` to create a new variable called `comparativeDelay` which is the difference between departure delay and the average delay in each origin airport for every hour in 2013 (checkout the `time_hour` variable in the flights data). Store the result in a variable called `comparativeDelays`.
 ```{r}
 comparitiveDelays <- flights %>% 
@@ -259,6 +264,7 @@ comparitiveDelays <- flights %>%
  mutate(avgDelay=mean(dep_delay,na.rm=T)) %>% 
   mutate(comparativeDelay=dep_delay-avgDelay) 
 ```
+See solution
 
 13. Now group the `comparativeDelays` tibble by carriers to print the top 10 airlines with the greatest average comparative delays.
 ```{r}
@@ -269,6 +275,7 @@ comparitiveDelays%>%
   top_n(10)
   
 ```
+
 
 14. Use `group_by()` with filter to print the 5 most delayed flights from each origin. Your printed tibble should have 15 rows.
 ```{r}

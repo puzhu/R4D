@@ -298,7 +298,7 @@ There is no right or wrong answer for this. The aim is to understand the merits 
 ##Task set 3: R markdown
 
 1. Modify the text below as per the prompt
-    + Underline me: Markdown doesn't allow for underlining as an option! 
+    + <u>Underline me</u>: Markdown doesn't allow for underlining as an option! However you can easily do this with a `<u></u>` html tag around the text you would like to underline.
     + **Make me bold**
     
     > Make me a block quote
