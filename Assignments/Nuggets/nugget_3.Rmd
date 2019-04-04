@@ -65,7 +65,7 @@ output:
 2. Use a ggplot chart(s) (of your choice) to show the relationship between flight distance and arrival delay. (The flight distances are about the same for every flight, so you could consider using it as a group to summarise the data)
 
 ##Day 5
-1. Look at the documentation of `facet_grid()` and create a histogram for each combination of origin and carrier.
+1. Look at the documentation of `facet_grid()` and create a histogram for departure delay each combination of origin and carrier.
 
 ##Day 6
 1. Pick any chart you have made so far and make it publication ready

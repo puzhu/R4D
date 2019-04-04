@@ -17,20 +17,24 @@ output:
 The section below provides overall feedback on the notebook. Specific comments are provided inline for each question.
 
 1. Was the assignement submitted on time? 
-    + **YES!** Good job Bobby!
+
+**YES!** Good job Bobby!
     
 2. Was it posted as an online link? 
-    + **YES!** [Submission Link](https://bobbymammen.github.io/BobbyR4d/Assignments/Assignment1.nb.html)
+
+**YES!** [Submission Link](https://bobbymammen.github.io/BobbyR4d/Assignments/Assignment1.nb.html)
     
 3. Does the code follow [recommended style conventions](http://adv-r.had.co.nz/Style.html)? 
-    + **Mixed.** The indentation of code seems to be an issue when using pipes. Try using snakecase instead of camelCase while naming variables i.e. don't pick up my habits.
+
+**Mixed.** The indentation of code is an issue when using pipes. Try using snakecase instead of camelCase while naming variables i.e. don't pick up my habits. Get into the habit of placing a pipe and hitting enter. This should automatically indent your code (if not look at your settings/preferences to see why that is not happening.)
     
 4. Does the notebook compile completely?
-    + **NO.** Line 136 of the notebook returns an error. In general, comment out the code using `#` when it returns an error. You should be able to run all the code in a notebook using the `Run All` option in the `Run` dropdown menu.
-    
-5. Overall effectiveness of the markdown content?
+
+**NO.** Line 136 of the notebook returns an error. In general, comment out the code using `#` when it returns an error. You should be able to run all the code in a notebook using the `Run All` option in the `Run` dropdown menu.
 
 6. Overall effectiveness of the code?
+
+In general, there seems to be a tendency to try things out just for the sake of seeing if it works or not. While this is good, be careful to take time to understand why a piece of code works and what it is doing. Each time you write something try and explain why it worked (or didn't) before moving on.
 
 
 ##Task set 1: Data types and structures
