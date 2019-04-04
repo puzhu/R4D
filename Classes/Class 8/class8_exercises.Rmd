@@ -75,59 +75,7 @@ flights %>%
 
 **Hard Task**: Can you explain the chart that was being plotted in the above chunk before you corrected it?
 
-##Task Set 2: Dplyr reminder
 
-
-1. Complete the code below to select the first 3 columns, `dep_delay` and `carrier` columns from flights data.
-```{r}
-flights %>% 
-    select()
-```
-
-
-2. Filter all flights that were delayed by more than 2 hours.
-
-3. Complete the following code to create a new variable that is the difference between `dep_delay` and `arr_delay`
-
-```{r}
-flights %>% 
-    select(1:3, carrier, dep_delay, arr_delay) %>% 
-    
-```
-
-
-4. Calculate the average arrival delay in 2013 using `summarise()`
-```{r}
-flights %>% 
-    summarise()
-```
-
-
-##Task Set 3: Grouping
-1. Modify the code below to find the mean monthly delay for every origin.
-```{r}
-flights %>% 
-    group_by(origin) %>% 
-    summarise(meanDelay = mean(dep_delay, na.rm = T))
-```
-
-2. Explain how this code works.
-```{r}
-flights %>% 
-    group_by(origin) %>% 
-    filter(dep_delay == max(dep_delay, na.rm = T))
-```
-
-3. Modify the code above to filter the flights that were the most delayed for each month for each origin.
-4. Would this code yield the same output if it were not grouped? Try to answer this without trying out the code first.
-```{r}
-flights %>% 
-    group_by(origin) %>% 
-    filter(dep_delay > 120) %>% 
-    ungroup()
-```
-
-5. Add a new column to the flights dataset using `group_by()` and `mutate()` that is the deviation of each flight `dep_delay` from monthly average departure delay.
 
 
 
