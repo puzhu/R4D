@@ -49,21 +49,53 @@ Identify the keys in all the datasets included in the planes data (2 of these we
 5. flights
 
 ##Task Set 3: Joins
-Time to complete: 15 mins
+Time to complete: 10 mins
 
-1. Complete the code below to see if there are any observations in the `flights` data that are not there in `planes`
+1. Complete the code below to see if there are any observations in the `flights` data that are not there in `planes`.
 ```{r}
-anti_join() %>% 
+flights
+```
+
+```{r}
+planes
+```
+
+The code below fails silently
+```{r}
+anti_join(flights, planes) %>% 
     distinct(tailnum, carrier)
 ```
 
+```{r}
+planes %>% 
+    filter(tailnum == "N3DUAA")
+```
+
+
+```{r}
+anti_join(flights, planes, by = "tailnum") %>% 
+    distinct(tailnum, carrier)
+```
+
+
 2. Replace the `anti_join()` with a `semi_join()` to see all the flights that have corresponding information in `planes`.
+
+```{r}
+semi_join(flights, planes, by = "tailnum") %>% 
+    distinct(tailnum, carrier)
+```
+
+```{r}
+planes %>% 
+    filter(tailnum == "N14228")
+```
+
 
 3. Complete the code below to find the average departure delay by the year of the planes manufacture. Note that since both the flights and the planes data have a column called year they will be represented as year.x and year.y (x being the first table in the join and y the second). 
 
 ```{r}
-inner_join() %>% 
-    group_by() %>% 
+inner_join(flights, planes, by = "tailnum") %>% 
+    group_by(makeYear = year.y) %>% 
     ##only keep flights above a certain threshold
     filter(n() > 30) %>% 
     summarise(meanDelay = mean(dep_delay, na.rm = T)) %>% 
