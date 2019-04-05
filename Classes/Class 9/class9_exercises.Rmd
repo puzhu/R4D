@@ -110,6 +110,51 @@ Time to complete: 20 mins
 
 1. **Hard** As noted in the class prep, there are duplicate keys in the weather data. Remove these (read the two options in the prep) and then use a `left_join()` to join it to flights. Draw a chart of your choice (you can choose to summarise the data if you want) to show the relationship with precipitation (`precip`)
 
+So the problem is that we have duplicate keys in the weather data
+```{r}
+weather %>% 
+    group_by(month, day, hour, origin) %>% 
+    filter(n() > 1)
+```
+
+There are two ways to fix these duplicates. One you can arbitrarily filter out of one of these rows.
+```{r}
+filteredWeather <- weather %>% 
+    group_by(month, day, hour, origin) %>% 
+    filter(row_number() == 2)
+```
+
+Lets check if this worked.
+```{r}
+filteredWeather %>% 
+    filter(month == 11 & day == 3 & hour == 1)
+```
+
+Lets now try it with summarise
+```{r}
+summarisedWeather <- weather %>% 
+    group_by(month, day, hour, origin) %>% 
+    summarise_all(mean)
+```
+
+```{r}
+keys <- c("month", "day", "hour", "origin")
+typeof(keys)
+```
+
+
+```{r}
+left_join(flights, summarisedWeather, by = c("month", "day", "hour", "origin")) %>% 
+    mutate(tempGroups = cut_interval(temp, n = 5)) %>% 
+    group_by(precip, tempGroups) %>% 
+    summarise(meanDelay = mean(dep_delay, na.rm = T)) %>% 
+    ggplot(aes(x = precip, y = meanDelay)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    facet_wrap(~tempGroups, scales = "free_x") +
+    ggthemes::theme_fivethirtyeight()
+```
+
 2. **Hard**: Use the `faa` code to combine the `flights` data with `airports` to study the effect of altitude on arrival delay. 
 
 
