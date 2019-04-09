@@ -1,0 +1,16 @@
+---
+title: "Class 10 - Lecture"
+author: Hari Subhash
+date: "Date created: `r Sys.Date()`"
+output:
+  html_notebook:
+    highlight: kate
+    smart: yes
+    theme: cosmo
+    code_folding: show
+    df_print: paged
+css: /Users/hsubhash/Documents/R4D/Assets/custom.css
+---
+
+Celebrate the halfway mark on Thursday.
+Should we talk about the facets?
