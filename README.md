@@ -35,10 +35,14 @@ This repository contains all the material for the R4D course - March 2019
 
 ## Week 4
 
-1. Class 6 - March 19th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%206/class6_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%206/class6_exercises.nb.html) | [Class Video]()
-2. Class 7 - March 19th, 2019 - [Class Prep](https://puzhu.github.io/R4D/Classes/Class%207/class7_prep.nb.html) | [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%207/class7_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%207/class7_exercises.nb.html) | [Class Video](https://youtu.be/OQhBLz6AA8c)
+1. Class 6 - March 26th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%206/class6_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%206/class6_exercises.nb.html) | [Class Video]()
+2. Class 7 - March 28th, 2019 - [Class Prep](https://puzhu.github.io/R4D/Classes/Class%207/class7_prep.nb.html) | [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%207/class7_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%207/class7_exercises.nb.html) | [Class Video](https://youtu.be/OQhBLz6AA8c)
 
 ## Week 5
 
-1. Class 8 - March 19th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%208/class8_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%208/class8_exercises.nb.html) | [Class Video](https://youtu.be/ha3FBWTdPQg)
-2. Class 9 - March 19th, 2019 - [Class Prep](https://puzhu.github.io/R4D/Classes/Class%209/class9_prep.nb.html) | [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%209/class9_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%209/class9_exercises.nb.html) | [Class Video](https://youtu.be/XIuYpWm3Il0)
+1. Class 8 - April 2nd, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%208/class8_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%208/class8_exercises.nb.html) | [Class Video](https://youtu.be/ha3FBWTdPQg)
+2. Class 9 - April 4th, 2019 - [Class Prep](https://puzhu.github.io/R4D/Classes/Class%209/class9_prep.nb.html) | [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%209/class9_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%209/class9_exercises.nb.html) | [Class Video](https://youtu.be/XIuYpWm3Il0)
+
+## Week 6
+
+1. Class 10 - April 9th - [Class Prep](https://puzhu.github.io/R4D/Classes/Class%2010/class10_prep.nb.html) | [Class Lecture]() | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%209/class9_exercises.nb.html) | [Class Video]()
