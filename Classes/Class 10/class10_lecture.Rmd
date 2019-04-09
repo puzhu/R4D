@@ -11,16 +11,16 @@ output:
     df_print: paged
 css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 ---
-**LEARNING OBJECTIVE**: Explore data effectively using a handy checklist
+**LEARNING OBJECTIVE**: Explore data effectively using a checklist
 
 **TOPICS TO COVER**
 
 1. Next assignment: Explore the causes of departure and arrival delays
-2. Go through the exploratory analysis checklist
-    + Formulate your initial question
-    + Examine your data sources
-        + `str()`, `glimpse()`, `summary()`, `skim()`
-        + Check the top and bottom of your data
+
+2. Formulate your initial question
+3. Examine your data sources
+    + `str()`, `glimpse()`, `summary()`, `skim()`
+    + Check the top and bottom of your data
 3. Examine the variables of interest for your question
 4. Explore a solution for your question
     + Use visual comparisons
