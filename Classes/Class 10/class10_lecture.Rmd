@@ -11,6 +11,23 @@ output:
     df_print: paged
 css: /Users/hsubhash/Documents/R4D/Assets/custom.css
 ---
+**LEARNING OBJECTIVE**: Explore data effectively using a handy checklist
 
-Celebrate the halfway mark on Thursday.
-Should we talk about the facets?
+**TOPICS TO COVER**
+
+1. Next assignment: Explore the causes of departure and arrival delays
+2. Go through the exploratory analysis checklist
+    + Formulate your initial question
+    + Examine your data sources
+        + `str()`, `glimpse()`, `summary()`, `skim()`
+        + Check the top and bottom of your data
+3. Examine the variables of interest for your question
+4. Explore a solution for your question
+    + Use visual comparisons
+    + Illustrate causal frameworks
+    + Use multivariate comparisons
+5. Try and invalidate your solution
+6. Reformulate your question (Rinse and repeat)
+7. Integrate different modes of presenting evidence
+
+
