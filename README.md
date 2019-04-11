@@ -48,6 +48,6 @@ This repository contains all the material for the R4D course - March 2019
 1. Class 10 - April 9th - [Class Prep](https://puzhu.github.io/R4D/Classes/Class%2010/class10_prep.nb.html) | [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%2010/class10_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%2010/class10_exercises.nb.html) | [Class Video](https://youtu.be/_A58MKxFVfw)
 1. Class 11 - April 11th - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%2011/class11_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%2011/class11_exercises.nb.html) | [Class Video]()
 
-## Assignment 1
+## Assignment 2
 
 **[Questions](https://puzhu.github.io/R4D/Assignments/Assignment%202/Assignment2.nb.html)** | **[Solution](https://puzhu.github.io/R4D/Assignments/Assignment%202/assignment2_solution.nb.html)**
