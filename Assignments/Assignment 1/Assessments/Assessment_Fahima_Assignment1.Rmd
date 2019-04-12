@@ -212,7 +212,7 @@ flights %>%
   slice(1:10) %>% 
   ungroup()
 ```
-`r emo::ji("check")`
+`r emo::ji("check")`. This works but I recommend using `top_n()` instead of arrange + slice combo.
 
 12. Use `group_by()` with `mutate()` to create a new variable called `comparativeDelay` which is the difference between departure delay and the average delay in each origin airport for every hour in 2013 (checkout the `time_hour` variable in the flights data). Store the result in a variable called `comparativeDelays`.
 ```{r}
