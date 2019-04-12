@@ -11,31 +11,13 @@ output:
     df_print: paged
 ---
 
-```{r}
-allEmos <- emo::jis
-
-allEmos %>% 
-    distinct(group, subgroup)
-```
-
 #Overall Comments
 
-1. Was the assignement submitted on time? 
-**YES!**
-    
-2. Was it posted as an online link? 
-    
-3. Does the code follow [recommended style conventions](http://adv-r.had.co.nz/Style.html)? 
-
-**Mixed.** The indentation of code is an issue when using pipes. Try using snakecase instead of camelCase while naming variables i.e. don't pick up my habits. Get into the habit of placing a pipe and hitting enter. This should automatically indent your code (if not look at your settings/preferences to see why that is not happening.)
-    
-4. Does the notebook compile completely?
-
-**NO.** Line 146 of the notebook returns an error.
-
-6. Overall effectiveness of the code?
-
-In general, there seems to be a tendency to try things out just for the sake of seeing if it works or not. While this is good, be careful to take time to understand why a piece of code works and what it is doing. Each time you write something try and explain why it worked (or didn't) before moving on.
+1. Was the assignement submitted on time? `r emo::ji("thumbsup")`
+2. Was it posted as an online link? `r emo::ji("thumbsup")`
+3. Does the code follow [recommended style conventions](http://adv-r.had.co.nz/Style.html)? `r emo::ji("thumbsup")`. Only suggestion would be to start using snake_case instead of camelCase to name your variables.
+4. Does the notebook compile completely? `r emo::ji("thumbsdown")` You have an error that stops the entire notebook from compiling in one go.
+6. Overall effectiveness of the code? `r emo::ji("man tipping hand")`: You are almost there. There are some places where you didn't use the appropriate dplyr verb to perform your task. I am guessing that a lot of these are sorted out by now.
 
 ##Task set 1: Data types and structures
 1. List the 4 most common (data) types of atomic vectors.
