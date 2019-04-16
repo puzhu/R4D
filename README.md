@@ -52,3 +52,7 @@ This repository contains all the material for the R4D course - March 2019
 ## Assignment 2
 
 **[Questions](https://puzhu.github.io/R4D/Assignments/Assignment%202/Assignment2.nb.html)** | **[Solution](https://puzhu.github.io/R4D/Assignments/Assignment%202/assignment2_solution.nb.html)**
+
+## Week 7
+
+1. Class 12 - April 16th - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%2012/class12_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%2012/class12_exercises.nb.html) | [Class Video]()
