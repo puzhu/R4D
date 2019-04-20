@@ -4,10 +4,9 @@ author: Your Name
 date: "Date created: `r Sys.Date()`"
 output:
   html_notebook:
-    highlight: kate
+    highlight: haddock
     smart: yes
-    theme: cosmo
-    code_folding: show
+    theme: readable
     df_print: paged
 ---
 
