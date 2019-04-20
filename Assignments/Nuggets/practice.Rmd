@@ -15,6 +15,7 @@ output:
 This notebook contains practice material. The aim is to get you to revise and practice some of the concepts that we have learnt so far.
 
 ##Subset
+###Setup
 While we have used the `dplyr` package to extract rows and columns from tibbles, it is useful to keep the base R syntax for this handy. I will use the `gapminder` dataset for this section. Lets load it along with the tidyverse. Lets use the `skim()` function from `skimr` to look at the gapminder data before we go further.
 
 ```{r, message=FALSE}
