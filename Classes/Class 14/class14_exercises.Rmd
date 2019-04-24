@@ -30,7 +30,53 @@ gapminder::gapminder
 
 ##Task Set 3: Clean
 1. Load and clean the untidy gapminder data.
+Here is my implementation for this.
+```{r, message=FALSE}
+library(tidyverse); library(gapminder)
+gapminderWide <- read_csv("assets/gapminder_wide.csv")
 
+gapminderWide
+```
+
+It looks like all the columns are encoding a particularly statistic and the year. Lets gather those into a combo column.
+```{r}
+gapminderWide <- gapminderWide %>% 
+    gather(key = "combo", value = "value", -continent, -country)
+
+gapminderWide
+```
+
+Next step we need to split the combo into year and variable.
+```{r}
+gapminderWide <- gapminderWide %>% 
+    separate(col = combo, into = c("variable", "year"), sep = "_")
+
+gapminderWide
+```
+
+Now the last task is to spread the variables into a column.
+```{r}
+gapminderWide <- gapminderWide %>% 
+    spread(key = variable, value = value)
+
+gapminderWide
+```
+
+Lets compare the output with the actual gapminder data.
+```{r}
+gapminder
+```
+
+The order of columns is not the same across the two tibbles. Lets fix that by reordering the gap_wide data by the names of the actual gapminder data.
+
+```{r}
+gapminderWide <- gapminderWide %>% 
+    select(names(gapminder))
+
+gapminderWide
+```
+
+Bonus task for everyone make the column types also match.
 
 ##Task Set 4: Non vectorised conditional
 1. Correct the code below so that it runs.
