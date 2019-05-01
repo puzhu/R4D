@@ -279,13 +279,14 @@ flights
 ```
 
 
-
 ```{r}
 output <- vector(mode = "numeric", length = length(col_names))
 
 for(i in seq_along(col_names)) {
+
     ##pull the ith column
-    col_data <- flights[col_names[i]]
+    col_data <- pull(flights, )
+
     
     ##check if it is numeric
     if(is.numeric(col_data)) {
@@ -301,7 +302,37 @@ output
 ```
 
 
+After class
+
+THere are two types of subsets in R. Simplifying vs preserving.
+```{r}
+flights %>% 
+    select(1)
+```
+
+```{r}
+flights %>% 
+    pull(1) %>% 
+    str()
+```
+
+The base R version of select
+```{r}
+flights[1] %>% str()
+```
 
 
+```{r}
+flights[[1]] %>% str()
+```
+
+More commonly
+```{r}
+flights$year %>% str()
+```
+
+```{r}
+is.numeric(c(NA, 1, 2, 3))
+```
 
 

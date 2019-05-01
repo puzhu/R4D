@@ -51,37 +51,6 @@ x
 x <- if_else(any(is.na(x)), x ^ 2, x ^ 0.5)
 ```
 
-
-
-3. Use `all()` to check if all the values in x are numeric. You can check if a value is numeric using `is.numeric()`
-
-```{r}
-all(is.numeric(x))
-```
-4. If `all()` values in x are numeric then replace all values in x with its squared value else replace it with the square root.
-
-```{r}
-if(all(is.numeric(x))) {
-    x <- x ^ 2
-} else {
-    x <- x ^ 0.5
-}
-
-x
-```
-
-
-```{r}
-if(is.numeric(x)) {
-    x <- x ^ 2
-} else {
-    x <- x ^ 0.5
-}
-
-x
-```
-
-
 5. Use an `if_else()` here. If x is NA then replace it with 1 else replace it with the square of x. Make sure you have the tidyverse loaded since `if_else()` comes from dplyr. The syntax for an `if_else()` is as follows: `if_else(condition, val1, val2)` where condition is something evaluates to a TRUE or FALSE vector that is same length as the val1 and val2.
 
 ```{r}
