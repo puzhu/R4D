@@ -4,7 +4,10 @@
 
 This repository contains all the material for the R4D course - March 2019
 
-**[Practice Practice Practice](https://puzhu.github.io/R4D/Assignments/Nuggets/practice.nb.html)**
+## Practice
+
+1. **[Week 3 Daily Nuggets](https://puzhu.github.io/R4D/Assignments/Nuggets/nugget_3.nb.html)**
+2. **[Practice Practice Practice](https://puzhu.github.io/R4D/Assignments/Nuggets/practice.nb.html)** This is a work in progress. I will complete this with the intention of it being a guide book + practice that you can use even after the class.
 
 ## Reference material
 
@@ -39,8 +42,6 @@ This repository contains all the material for the R4D course - March 2019
 
 1. Class 4 - March 19th, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%204/class4_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%204/class4_exercises.nb.html) | [Class Video](https://youtu.be/gTG62gKanUQ)
 2. Class 5 - March 21st, 2019 - [Class Lecture](https://puzhu.github.io/R4D/Classes/Class%205/class5_lecture.nb.html) | [Class Exercises](https://puzhu.github.io/R4D/Classes/Class%205/class5_exercises.nb.html) | [Class Video](https://youtu.be/OuEfeF0D24E)
-
-**[Week 3 Daily Nuggets](https://puzhu.github.io/R4D/Assignments/Nuggets/nugget_3.nb.html)**
 
 ## Week 4
 
