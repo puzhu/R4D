@@ -15,28 +15,29 @@ output:
 ### **Learning objectives**
 1. Write a for loop
 2. Learn when to use a for loop and when to vectorize
-3. Map a function to elements of a vector
+3. Write our first function
+4. Map that function to elements of a vector
 
 ### **Topics**
 1. For loops
-2. Map
+2. First function
+3. Map
 
 ### **WHY?**
-Repetitive tasks are very common in programming. While R takes care of a lot of this through the clever use of vectorization and functions, you still need to often devise ways to write a loop.
+Repetitive tasks are very common in programming. 
 
-<small>
-
-- If you find yourself copying and pasting code to repeat similar tasks, **stop!**
-- Fundamental rule: **DO NOT REPEAT YOURSELF**
-- It is time to either use a function (which we learn later), a loop, or even better both.
-
-</small>
-
-## Break the loop - Lets pick apart a for loop
+![](https://media.giphy.com/media/8lHo1afMq2tUO8N4YY/giphy.gif)
 
 
 
-### A common recipe for a for loop
+### **Basic rules**
+
+- *DO NOT REPEAT YOURSELF (D.R.Y)* - If you find yourself copying and pasting code to repeat similar tasks, **stop!**
+- It is time to program that pancake flipper. Write a function (which we will learn later), a loop, or even better both.
+
+## 👇👇👇 For loop 👇👇👇
+
+### **A common recipe**
 The code below shows a commonly used pattern for a for loop
 ```{r, eval=FALSE}
 ## Part 1: initiate an output vector
@@ -54,24 +55,32 @@ for (i in seq_along(obj)) {
 
 
 ### The pieces: Output
-- The first step (usually), create an output vector to capture the results from each iteration 
-- The recommended way to create this output vector is using the `vector()` function.
-- You can create vectors of any of the atomic types (chr, logi etc.) and lists using the `mode` attribute.
-
-The code below creates a character vector with empty strings to store the character output of a for loop that we expect to run for 10 iterations
-
-```{r}
-vector(mode = "character", length = 10)
-```
-
-###
-
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width=700}
 knitr::include_graphics("Assets/output_vec.png")
 ```
+```{r}
+##some object that I would like to iterate over
+vec_iterate <- 1:10
 
+##create the output vector
+name_output <- vector(mode = "character", length = length(vec_iterate))
+
+name_output
+```
+
+### Questions
 - When should we use a list to store the output?
 - When should we consider not creating a fixed length output vector? How do you store the output then?
 
 ### The pieces: The iterator
+
+```{r, out.width=700}
+knitr::include_graphics("Assets/iterator.png")
+```
+
+### The pieces: Code block
+```{r, out.width=700}
+knitr::include_graphics("Assets/body.png")
+```
+
 

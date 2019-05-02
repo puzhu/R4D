@@ -514,29 +514,32 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <ol type="1">
 <li>Write a for loop</li>
 <li>Learn when to use a for loop and when to vectorize</li>
-<li>Map a function to elements of a vector</li>
+<li>Write our first function</li>
+<li>Map that function to elements of a vector</li>
 </ol>
 </section>
 <section id="topics" class="slide level3">
 <h3><strong>Topics</strong></h3>
 <ol type="1">
 <li>For loops</li>
+<li>First function</li>
 <li>Map</li>
 </ol>
 </section>
 <section id="why" class="slide level3">
 <h3><strong>WHY?</strong></h3>
-<p>Repetitive tasks are very common in programming. While R takes care of a lot of this through the clever use of vectorization and functions, you still need to often devise ways to write a loop.</p>
-<p><small></p>
-<ul>
-<li>If you find yourself copying and pasting code to repeat similar tasks, <strong>stop!</strong></li>
-<li>Fundamental rule: <strong>DO NOT REPEAT YOURSELF</strong></li>
-<li>It is time to either use a function (which we learn later), a loop, or even better both.</li>
-</ul>
-<p></small></p>
+<p>Repetitive tasks are very common in programming.</p>
+<p><img data-src="https://media.giphy.com/media/8lHo1afMq2tUO8N4YY/giphy.gif" /></p>
 </section>
-<section><section id="break-the-loop---lets-pick-apart-a-for-loop" class="title-slide slide level2"><h2>Break the loop - Lets pick apart a for loop</h2></section><section id="a-common-recipe-for-a-for-loop" class="slide level3">
-<h3>A common recipe for a for loop</h3>
+<section id="basic-rules" class="slide level3">
+<h3><strong>Basic rules</strong></h3>
+<ul>
+<li><em>DO NOT REPEAT YOURSELF (D.R.Y)</em> - If you find yourself copying and pasting code to repeat similar tasks, <strong>stop!</strong></li>
+<li>It is time to program that pancake flipper. Write a function (which we will learn later), a loop, or even better both.</li>
+</ul>
+</section>
+<section><section id="for-loop" class="title-slide slide level2"><h2>👇👇👇 For loop 👇👇👇</h2></section><section id="a-common-recipe" class="slide level3">
+<h3><strong>A common recipe</strong></h3>
 <p>The code below shows a commonly used pattern for a for loop</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">## Part 1: initiate an output vector</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">output &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;vector_type&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(obj))</a>
@@ -551,24 +554,29 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <a class="sourceLine" id="cb1-11" data-line-number="11">}</a></code></pre></div>
 </section><section id="the-pieces-output" class="slide level3">
 <h3>The pieces: Output</h3>
-<ul>
-<li>The first step (usually), create an output vector to capture the results from each iteration</li>
-<li>The recommended way to create this output vector is using the <code>vector()</code> function.</li>
-<li>You can create vectors of any of the atomic types (chr, logi etc.) and lists using the <code>mode</code> attribute.</li>
-</ul>
-<p>The code below creates a character vector with empty strings to store the character output of a for loop that we expect to run for 10 iterations</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;character&quot;</span>, <span class="dt">length =</span> <span class="dv">10</span>)</a></code></pre></div>
+<p><img src="Assets/output_vec.png" width="700" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">##some object that I would like to iterate over</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">vec_iterate &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">##create the output vector</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">name_output &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;character&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(vec_iterate))</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">name_output</a></code></pre></div>
 <pre><code>##  [1] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;</code></pre>
-</section><section id="section" class="slide level3">
-<h3></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;Assets/output_vect.png&quot;</span>)</a></code></pre></div>
-<p><img data-src="Assets/output_vect.png" /></p>
+</section><section id="questions" class="slide level3">
+<h3>Questions</h3>
 <ul>
 <li>When should we use a list to store the output?</li>
 <li>When should we consider not creating a fixed length output vector? How do you store the output then?</li>
 </ul>
 </section><section id="the-pieces-the-iterator" class="slide level3">
 <h3>The pieces: The iterator</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;Assets/iterator.png&quot;</span>)</a></code></pre></div>
+<p><img src="Assets/iterator.png" width="700" /></p>
+</section><section id="the-pieces-code-block" class="slide level3">
+<h3>The pieces: Code block</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;Assets/body.png&quot;</span>)</a></code></pre></div>
+<p><img src="Assets/body.png" width="700" /></p>
 </section></section>
     </div>
   </div>
