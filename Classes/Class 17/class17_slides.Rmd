@@ -1,0 +1,77 @@
+---
+title: "Iteration"
+output:
+  revealjs::revealjs_presentation:
+    slide_level: 3
+    center: true
+    theme: simple
+    highlight: haddock
+    self_contained: false
+    reveal_options:
+      slideNumber: true
+      previewLinks: true
+---
+
+### **Learning objectives**
+1. Write a for loop
+2. Learn when to use a for loop and when to vectorize
+3. Map a function to elements of a vector
+
+### **Topics**
+1. For loops
+2. Map
+
+### **WHY?**
+Repetitive tasks are very common in programming. While R takes care of a lot of this through the clever use of vectorization and functions, you still need to often devise ways to write a loop.
+
+<small>
+
+- If you find yourself copying and pasting code to repeat similar tasks, **stop!**
+- Fundamental rule: **DO NOT REPEAT YOURSELF**
+- It is time to either use a function (which we learn later), a loop, or even better both.
+
+</small>
+
+## Break the loop - Lets pick apart a for loop
+
+
+
+### A common recipe for a for loop
+The code below shows a commonly used pattern for a for loop
+```{r, eval=FALSE}
+## Part 1: initiate an output vector
+output <- vector(mode = "vector_type", length = length(obj))
+
+## Part two: Setup the iteration
+for (i in seq_along(obj)) {
+    
+    ##Part 3: do something and store the results
+    ##(This could be a much longer piece of code)
+    output[[i]] <- do_something_with(obj[[i]])
+    
+}
+```
+
+
+### The pieces: Output
+- The first step (usually), create an output vector to capture the results from each iteration 
+- The recommended way to create this output vector is using the `vector()` function.
+- You can create vectors of any of the atomic types (chr, logi etc.) and lists using the `mode` attribute.
+
+The code below creates a character vector with empty strings to store the character output of a for loop that we expect to run for 10 iterations
+
+```{r}
+vector(mode = "character", length = 10)
+```
+
+###
+
+```{r, echo=FALSE}
+knitr::include_graphics("Assets/output_vec.png")
+```
+
+- When should we use a list to store the output?
+- When should we consider not creating a fixed length output vector? How do you store the output then?
+
+### The pieces: The iterator
+
