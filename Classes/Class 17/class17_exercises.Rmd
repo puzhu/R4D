@@ -64,16 +64,21 @@ odds_evens2
 
 9. Use the `identical()` function to check if the odds_evens is identical to odds_evens2.
 
-10. Here is our 
+### Task Set 2: Make a for loop
+
+1. Take the gapminder dataset. Loop through its columns. If a column is numeric then store the output of the `summary()` command. If it is not numeric, then store NULL. Print the ouput
+
+2. Use `names(gapminder)` to identify the names of columns and set these as the names of the output vector you created.
+
+### Task Set 3: Functions
+
+1. Create a function that takes two numbers (i.e. atomic vectors of length one) and returns the square of whichever number is the greatest. Use `stop("Your error message here")` to throw an error if the input vector is greater than 1 in length. Test your function to make sure it works.
+
+2. Create a function that takes an atomic vector (of any length) as its input. If it numeric then use the `hist()` function from base to plot a histogram else return an error using `stop()`. See the code below for an illustration of the `hist()` command. Test your function to make sure it works.
 
 ```{r}
-gapminder
+hist(gapminder$lifeExp)
 ```
 
-
-```{r}
-
-ggplot(gapminder, aes(lifeExp)) + geom_histogram()
-```
 
 

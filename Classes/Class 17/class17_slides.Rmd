@@ -83,4 +83,21 @@ knitr::include_graphics("Assets/iterator.png")
 knitr::include_graphics("Assets/body.png")
 ```
 
+### Practice time 
+
+👉👉[Task Set 1](https://puzhu.github.io/R4D/Classes/Class%2017/class17_exercises.nb.html)👈👈
+
+
+## 👇👇👇 In class task 👇👇👇
+
+###
+
+```{r}
+library(gapminder)
+head(gapminder)
+```
+
+I would like to take gapminder data set and create a histogram if it is a continous variable and bar chart for `continent` and do nothing for `country`. 
+
+
 
