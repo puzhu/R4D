@@ -13,6 +13,39 @@ output:
   html_document:
     toc: no
 ---
+```{r}
+library(gapminder)
+
+group_gap <- gapminder %>% 
+    group_nest(country) %>% 
+    ungroup()
+
+country_model <- function(df) {
+  lm(lifeExp ~ year + gdpPercap, data = df)
+}
+
+group_gap %>% 
+    mutate(model = map(.x = data, ~ country_model(.x))) %>% 
+    
+```
+
+```{r}
+gapminder
+```
+
+
+###Points to discuss
+
+1. Code should run top to bottom
+2. Make it readable
+    + Avoid long pipes
+    + Break into variables
+    + Annotate your code
+3. Look at lubridate
+4. Look into tidy models
+5. group_nest() + Functions + Map will save you.
+
+
 
 # {.tabset .tabset-fade .tabset-pills}
 
@@ -39,30 +72,56 @@ library(tidyverse); library(nycflights13); library(ggthemes)
 </div>
 
 ```{r}
-flights %>% 
-    group_by(sched_dep_time) %>% 
-    filter(n() >= 100) %>% 
-    distinct(sched_dep_time) %>% 
-    pull()
+ mutate(sched_dep_time_chr = as.character(sched_dep_time) %>% 
+               if_else(str_length(.) == 3, paste0("0", .), .)) %>% 
+    distinct(sched_dep_time, sched_dep_time_chr) %>% 
+    mutate(str1 = str_sub(sched_dep_time_chr, start = 1, end = 2),
+           str2 = str_sub(sched_dep_time_chr, start = 3, end = 4),
+           final_time = paste(str1, str2, sep = ":"),
+           gap_8 = final_time %--% "20:00")
+```
 
-flights %>% 
-    count(sched_dep_time) %>% 
-    filter(n > 100) %>% 
-    pull(sched_dep_time)
+```{r}
+busy_times
 ```
 
 
 ```{r}
-flights %>%
-             group_by(sched_dep_time) %>%
-             summarise(n = length(sched_dep_time), n()) %>%
-             filter(n >= 100) %>%
-             select(sched_dep_time) %>%
-             unique() %>%
-             unlist() %>%
-             as.character() %>%
-             as.integer()
+library(lubridate)
+##Pull out departure times with at least 100 flights that took off.
+busy_times <- flights %>% 
+    filter(!is.na(dep_delay)) %>% 
+    group_by(sched_dep_time) %>% 
+    filter(n() < 100) %>% 
+    pull(sched_dep_time) %>% 
+    unique()
+   
+
+
+    
+    
+plot_data <- flights %>% 
+    filter(!is.na(dep_delay) & sched_dep_time %in% busy_times) %>% 
+    select(sched_dep_time, dep_delay) %>% 
+    mutate(is_delay = if_else(dep_delay > 0, 1, 0),
+           diff_20h = if_else(sched_dep_time < 2000,
+                              1960 - sched_dep_time,
+                              sched_dep_time - 2000)) %>%
+    group_by(diff_20h) %>%
+    mutate(op_diff20 = mean(is_delay)) %>% 
+    ungroup() %>% 
+    mutate(prob_delay = 1/(1 + exp(-(0.2746527 - 0.001169423 * diff_20h))))
+
+ggplot(data = plot_data, mapping = aes(diff_20h, prob_delay)) +
+  geom_line(size = 1.5, color = 'orange') +
+  ggtitle('Fly in the morning to lower your chance for delay') +
+  scale_color_fivethirtyeight() +
+  theme_fivethirtyeight() +
+  geom_point(aes(x = diff_20h, y = op_diff20), color = 'gray') +
+  geom_hline(yintercept = 0.39094, color = 'blue', size = 1)
+
 ```
+
 
 ```{r echo=FALSE}
 
@@ -88,7 +147,7 @@ test_a <- flights %>% ### flights[sample(nrow(flights),100),] %>% # Use this for
   as_tibble()
 
 test_b <- cbind(test_a, tibble(sched_dep_time_diff_8pm = sample(0:1460, nrow(test_a),replace=T))) %>%
-  mutate(prob_delay = 1/(1+exp(-(0.2746527 - 0.001169423 * sched_dep_time_diff_8pm))))
+  mutate(prob_delay = 1/(1 + exp(-(0.2746527 - 0.001169423 * sched_dep_time_diff_8pm))))
 
 
 test_b %>%
@@ -97,8 +156,8 @@ test_b %>%
   ggtitle('Fly in the morning to lower your chance for delay') +
   scale_color_fivethirtyeight() +
   theme_fivethirtyeight() +
-  geom_point(data = test_b, aes(x = diff_20h, y = op_diff20), color = 'gray') +
-  geom_hline(yintercept = 0.39094, color='blue', size = 1)
+  geom_point(aes(x = diff_20h, y = op_diff20), color = 'gray') +
+  geom_hline(yintercept = 0.39094, color = 'blue', size = 1)
 
 ```
 
