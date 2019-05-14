@@ -51,9 +51,9 @@ gapminder[gapminder$year == max(gapminder$year, na.rm = F), ]
 1. Use summarise to calculate the mean population for the `gap_latest` dataset
 2. Repeat the same step after grouping by continent.
 3. Group the gapminder dataset and show the number of distinct countries in each continent in the data.
-4. Group the gapminder dataset by year and calculate the median lifeExp per year. Don't use a summarise, instead use a `mutate()` to create this new column. Store this as `gap_year`
-5. Group the `gap_year` dataset to calculate the number of countries in each year and continent that are above the median and another variable that is below the median for lifeExp.
-6. The following command calculates the number of values of gdpPercap in the gapminder dataset that are above 5000 USD. This works by first computing the output of `gapminder$gdpPercap > 5000`, which returns a logical vector of TRUE and FALSE, and since TRUE and FALSE can be substituted with 1 and 0, `sum(gapminder$gdpPercap > 5000)` return the total number of cases where the gdpperCap was greater than 5000. Now apply the same logic within a summarise command on the `gap_year` tibble to find the number of countries that are above the global mean lifeExp mean for each continent for each year, and the number that are below.
+4. Group the gapminder dataset and filter the countries that have the highest and lowest lifeExp for each continent for each year.
+5. Group the gapminder dataset by year and calculate the median lifeExp per year. Don't use a summarise, instead use a `mutate()` to create this new column. Store this as `gap_year`
+6. The following command calculates the number of values of gdpPercap in the gapminder dataset that are above 5000 USD. This works by first computing the output of `gapminder$gdpPercap > 5000`, which returns a logical vector of TRUE and FALSE, and since TRUE and FALSE are really 1 and 0, `sum(gapminder$gdpPercap > 5000)` returns the total number of cases where the gdpperCap was greater than 5000. Now apply the same logic within a summarise command on the `gap_year` tibble to find the number of countries that are above the median lifeExp for each year for each continent, and the number that are below.
 ```{r}
 sum(gapminder$gdpPercap > 5000)
 ```
