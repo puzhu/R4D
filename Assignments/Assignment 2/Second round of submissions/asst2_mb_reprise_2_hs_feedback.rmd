@@ -42,7 +42,6 @@ test_a <- flights %>%
 
 # test_a
 
-
 ```
 
 
@@ -53,41 +52,9 @@ test_b <- test_a %>%
                               (trunc(sched_dep_time/100) ## This line provides the hour
                                 ,str_sub(sched_dep_time,-2,-1))) ## This line provides the minute
          ,sched_dep_time_metric = 100 * (trunc(sched_dep_time/100)) + as.numeric(str_sub(as.character(sched_dep_time), -2, -1)) / 3 * 5)
-
-## takes an integer or character representation and returns a time object. ## requires the chron package
-create_time <- function(time_vec) {
-  padded_time <- str_pad(time_vec, width = 4, side = "left", pad = 0)
-  piece_one <- str_sub(padded_time, start = 1, end = 2)
-  piece_two <- str_sub(padded_time, start = 3, end = 4)
-  
-  paste(piece_one, piece_two, "00", sep = ":") %>% 
-    chron::times(.)
-} 
-
-create_prediction <- function(time_object) {
-  normalized_metric_time <- abs(as.numeric(time_object) / 60 - 19 * 60 - 35)
-  max(1 / (1 + exp(-(0.279603750 - 0.001999519 * normalized_metric_time))))
-}
-  
-
-test_a %>% 
-  mutate(is_delay = if_else(dep_delay > 0, 1, 0), 
-         new_dep_time = create_time(sched_dep_time)) %>%
-  group_by(new_dep_time) %>% 
-  summarise(op_sched_dep_time = mean(is_delay, na.rm = T),
-            pred_bivar = create_prediction(time_object = new_dep_time)) %>% 
-  ggplot() +
-  geom_line(size = 1, aes(x = new_dep_time, y = 0.39094), color = 'gray') +
-  geom_point(size = 1, mapping = aes(x = new_dep_time, y = op_sched_dep_time, color = 'observed probability')) 
-
-+
-  geom_line(data = test_c, mapping = aes(x = new_dep_time, y = pred_bivar, color = 'predicted probability'), size = 1.5) +
-  ggtitle('Fly in the morning to lower your chance for delay') +
-  scale_color_fivethirtyeight(labels = c('observed p', 'predicted p'),
-                              name = 'Prob. of delay given sched. dep. time') +
-  theme_fivethirtyeight()
-  
 ```
+
+
 
 
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=TRUE}
@@ -119,6 +86,87 @@ ggplot() +
   
 
 ```
+
+## Feedback
+
+1. Use functions to do most of your work. Below I have refactored your code using functions to achieve all the calculations you were doing. Take a close look at them and see if you can replicate it elsewhere in your code. This way of coding is much easier to maintain and understand. 
+2. Avoid replicating large datasets in multiple variables. R uses your RAM to store the data you create, this means that replicating large datasets using different variables is not a good idea (points to bad coding practice in general) since it will slow everything down. The refactored code below only creates a single summarized tibble to make the plot instead of multiple copies of the large flights tibble.
+3. I have also refactored your ggplot code. Go through that to see the differences. Uses some of the stuff we discussed yesterday.
+4. Your file currently does not run top to bottom. Fix this.
+5. In general, I usually maintain functions that I use for a project separately. Say for instance "helpers.R", which I then load them into my environment using `source("helpers.R")`. This is a convenient way to keep your notebooks concise. I would advise the same here. 
+
+```{r}
+## takes a vector with integer times and converts to metric
+convert_metric <- function(time_vec) {
+  ## get the hour and multiply by 100
+  metric_hour <- 100 * trunc(time_vec/100)
+  
+  ## get the min and scale to 100
+  metric_min <- as.numeric(str_sub(as.character(time_vec), -2, -1)) / 60  * 100
+  
+  ##return the combined value
+  metric_hour + metric_min
+}
+
+## take a vector with time (in integer format) and convert to minutes
+convert_minutes <- function(time_vec) {
+  ## hours in minutes
+  num_hour <- trunc(time_vec / 100) * 60
+  
+  ## minutes
+  num_min <- as.numeric(str_sub(as.character(time_vec), -2, -1))
+  
+  ## time in minutes
+  num_hour + num_min
+}
+
+## given a mid point hour and minute normalize the time
+normalize_time <- function(time_mins, mid_hour = 19, mid_min = 35) {
+  abs(time_mins - mid_hour * 60 - mid_min)
+}
+
+## given a normalized time calculate the predicted value
+create_prediction <- function(normalized_time_diff) {
+  max(1 / (1 + exp(-(0.279603750 - 0.001999519 * normalized_time_diff))))
+}
+
+```
+
+
+```{r}
+plot_data <- flights %>% 
+  group_by(sched_dep_time) %>%
+  filter(n() >= 100 & !is.na(dep_delay) == T) %>% 
+  ungroup() %>%
+  mutate(is_delay = if_else(dep_delay > 0, 1, 0), ## is the flight delayed
+         sched_dep_time_metric = convert_metric(sched_dep_time), ## departure time in metric
+         sched_dep_time_numeric = convert_minutes(sched_dep_time) ## departure time as numeric
+         ) %>% 
+  group_by(sched_dep_time_metric) %>% 
+  summarise(op_sched_dep_time = mean(is_delay, na.rm = T), ## calculate mean delay
+            pred_bivar = create_prediction(normalize_time(sched_dep_time_numeric)) ## calculate the predicted line
+            ) %>% 
+  ungroup()
+
+```
+
+
+```{r}
+## get the baseline prob
+baseline <- sum(flights$dep_delay > 0, na.rm = T) / sum(!is.na(flights$dep_delay))
+
+## draw the plot
+ggplot(data = plot_data, mapping = aes(x = sched_dep_time_metric)) + ## x aesthetic is common across all plots so keep it up top
+  geom_line(mapping = aes(color = 'gray'), size = 1, y = baseline) +
+  geom_point(mapping = aes(y = op_sched_dep_time, color = "red"), size = 1) +
+  geom_line(mapping = aes(y = pred_bivar), color = "blue", size = 1.5) +
+  scale_color_identity(guide = "legend", label = c('observed p', 'predicted p')) + ## using the identity scale to recognize colors as is
+  labs(title = 'Fly in the morning to lower your chance for delay',
+      color = "Prob. of delay given sched. dep. time") + ## using labs to label both the legend for color and the plot title
+  theme_fivethirtyeight()
+```
+
+
 
 
 ---  
